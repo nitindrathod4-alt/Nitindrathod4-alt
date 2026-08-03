@@ -1,16 +1,97 @@
-## Hi there 👋
+<h1 align="center">Hi 👋, I'm Nitin Rathod</h1>
+<p align="center"><code>Nitindrathod4-alt</code></p>
 
-<!--
-**nitindrathod4-alt/Nitindrathod4-alt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<table>
+<tr>
+<td valign="top" width="50%">
 
-Here are some ideas to get you started:
+```
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             =@@@@@@@@+@@@@@%=.                             %
+%                           +@@.             %@@@#:                          %
+%                         =@@                    @@*                         %
+%                        #@                        @*                        %
+%                       @@               :-:--      @                        %
+%                      #@   .          -..    .:.   @.                       %
+%                     .@      ..=:  ::           . #@                        %
+%                     -@     .                     @@                        %
+%                     *@                            @.                       %
+%                     @@ .   .         .            @=                       %
+%                     @         :: . -+*=*==:==*    @%                       %
+%                    .@    -   +%%@%%*-:-==+==:-*    @                       %
+%                    .@   .@@*.-...   .. ..  .  +    @                       %
+%                    .@    = ..:  .          .  -    @                       %
+%                     @    -                    :.   @                       %
+%                     @= :=-.=*%%%#==- =-*###++-.+- *@                       %
+%                    .@@ =*.     .=++  #=+*:    .=* @@-                      %
+%                    -   :=   ..      .      ..  :+   #                      %
+%                    +   -: .    :=  :*   @  -   .-   @                      %
+%                    +.  . .:  * *-.  *  -@ -=  -..   @                      %
+%                    =-  .  :-:   ..  -   :  .==: .   @                      %
+%                    -+     .-:   -   ..  -- .:.  .   #                      %
+%                    .%   .     .-  -:**:  =:.       *=                      %
+%                     %   :.  ....   -%- .  :-.      @.                      %
+%                     =:     ..:-#%-      %#=:..     #                       %
+%                      **@   . =-            +:.   @#:                       %
+%                       :@    :=   .::-::.    -   ##.                        %
+%                        =%    + :.  *#*-: ::=:   @.                         %
+%                         @. : .-=:.      .:-.   @+                          %
+%                        -@:  :   . .-:=-:.  .:  @#                          %
+%                       +@      .-=-++ -++=.    : @@-                        %
+%                    :*@@  @       --+-.=       @  #@@*:                     %
+%                 :#@@@-   @. =.             :: @.   .@@@@=.                 %
+%             .=@@@@       @@  -: ::.      .:=  @        @@@@#-.             %
+%          .+@@@*          *@  ::.  :+#-   .-  @@            @@@@*:          %
+%      .-%@@@+              @@  --        .-:  @@               :@@@@+.      %
+%   .+@@@@           .      @+@  -:      .-:  @#%                   *@@@#:   %
+% .#@@-               .     @+#@  :.     .   @@@=                       @@%  %
+% *@                        :@-.#   .   .   @  @                          @* %
+% @                          @  -@:  ....  %:  @                           @ %
+%-@                          @. ..=*  :   *-: :@                        .  @:%
+%%@                          @#-.. =.    *:  :+@                           @%%
+%@                           :@:   .+%  #.   .%@                            @%
+@@   .                        @:     +-:.     @                             @@
+@@                            @+        .    .@                        .    +@
+@     .                       *%       .     =@                        .     %
+%                              @.            %%                              *
+*                              @-            @                        .      -
+-                              @*           :@                        .      .
+.                              =@           =@                        .
+                                @.          %%
+                                @=          @                        .
+                                @%         :@         .              .
+                                 @         =@         .
+                                 @         @#      .
+                                 @-        @
+                                 +%%%%%%%%%%:
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+</td>
+<td valign="top" width="50%">
+
+```
+nitin@rathod
+-------------
+Name:            Nitin Dayaram Rathod
+GitHub:          Nitindrathod4-alt
+
+Languages:       JavaScript, HTML, CSS
+Tools:           VS Code, Git, GitHub, Node.js
+
+Hobbies:         Coding side-projects
+                 Exploring new tech
+                 Photography
+
+Contact:
+Email:           nitindrathod4@gmail.com
+
+GitHub Stats:
+Repos:           -
+Followers:       -
+```
+
+</td>
+</tr>
+</table>
+
+<p align="center">⭐️ From <a href="https://github.com/Nitindrathod4-alt">Nitindrathod4-alt</a></p>
