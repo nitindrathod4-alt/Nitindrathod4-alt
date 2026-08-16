@@ -1,89 +1,36 @@
+<div align="center">
+
 # 👋 Hey, I'm Nitin Rathod
 
-### 🚀 DevOps & Cloud Engineer | AWS | Kubernetes | Docker | Terraform
+### 🚀 DevOps & Cloud Engineer
 
-> Building, automating and deploying cloud-native applications ⚡
+**AWS • Kubernetes • Docker • Terraform • Jenkins • Linux • CI/CD**
 
----
+[![GitHub](https://img.shields.io/badge/GitHub-nitindrathod4--alt-181717?style=for-the-badge&logo=github)](https://github.com/nitindrathod4-alt)
+[![Profile Views](https://komarev.com/ghpvc/?username=nitindrathod4-alt&style=for-the-badge&color=blueviolet)](https://github.com/nitindrathod4-alt)
 
-## 🧑‍💻 About Me
-
-I'm a DevOps & Cloud enthusiast focused on building real-world infrastructure,
-automation and CI/CD solutions.
-
-- ☁️ AWS Cloud
-- 🐳 Docker & Containerization
-- ☸️ Kubernetes & Amazon EKS
-- 🏗️ Terraform & Infrastructure as Code
-- 🔄 Jenkins & CI/CD
-- 🐧 Linux
-- 🔀 Git & GitHub
-- 🔍 SonarQube
-- ☕ Java / Maven
+</div>
 
 ---
 
-## 🛠️ Tech Stack
+## ⚡ Who Am I?
 
-<p align="center">
+```yaml
+name: Nitin Rathod
+role: DevOps & Cloud Engineer
+location: India
 
-<img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,jenkins,linux,git,github,java,maven,bash,mongodb" />
+focus:
+  - Cloud Infrastructure
+  - CI/CD Automation
+  - Containerization
+  - Kubernetes
+  - Infrastructure as Code
+  - Cloud-Native Applications
 
-</p>
-
----
-
-## 🚀 Featured Projects
-
-### ☸️ Kubernetes / Amazon EKS
-
-Cloud-native application deployment using:
-
-`AWS EKS` • `Docker` • `Kubernetes` • `LoadBalancer`
-
----
-
-### 🏗️ AWS Infrastructure with Terraform
-
-Infrastructure automated using:
-
-`Terraform` • `AWS IAM` • `EC2` • `VPC` • `EKS`
-
----
-
-### 🔄 End-to-End CI/CD Pipeline
-
-Automated build and deployment pipeline using:
-
-`Jenkins` • `GitHub` • `Maven` • `Docker` • `DockerHub`
-
----
-
-### 🏥 Hospital DevOps Project
-
-Full-stack application with DevOps deployment practices.
-
-`Docker` • `AWS` • `MongoDB` • `CI/CD` • `Kubernetes`
-
----
-
-## 📚 DevOps Journey
-
-```text
-Linux
-  ↓
-Git & GitHub
-  ↓
-Docker
-  ↓
-Jenkins & CI/CD
-  ↓
-AWS
-  ↓
-Terraform
-  ↓
-Kubernetes
-  ↓
-Amazon EKS
-  ↓
-Cloud-Native DevOps
+currently_learning:
+  - Advanced Kubernetes
+  - AWS Architecture
+  - Terraform
+  - Cloud Security
+  - DevSecOps
