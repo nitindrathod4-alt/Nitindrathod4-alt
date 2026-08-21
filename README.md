@@ -1,14 +1,6 @@
-<div align="center">👋 Hey, I'm Nitin Rathod
-
-🚀 DevOps & Cloud Engineer
-
-AWS • Kubernetes • Docker • Terraform • Jenkins • Linux • CI/CD
-
-""GitHub" (https://img.shields.io/badge/GitHub-nitindrathod4--alt-181717?style=for-the-badge&logo=github)" (https://github.com/nitindrathod4-alt)
-
-"Profile Views" (https://komarev.com/ghpvc/?username=nitindrathod4-alt&style=for-the-badge)
-
-</div>---
+<div align="center">
+  <img src="./github-banner.png" width="100%" />
+</div>
 
 ⚡ About Me
 
