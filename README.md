@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="./github-banner.png" width="100%" alt="Nitin Rathod - DevOps & Cloud Engineer" />
-  <img src="./assets/devops-engineer-signature.svg" width="100%" alt="Nitin Rathod DevOps Engineer" />
+  <img src="./github-banner.png" width="100%" alt="DevOps & Cloud Engineer" />
+  <img src="./assets/devops-engineer-signature.svg" width="100%" alt="DevOps Engineer" />
 </div>
 
 <div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=900&color=00BFFF&center=true&vCenter=true&width=850&lines=DevOps+%26+Cloud+Engineer;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Cloud+Automation;Build+%E2%80%A2+Automate+%E2%80%A2+Deploy+%E2%80%A2+Scale" /></div>
@@ -15,7 +15,7 @@
 
 ---
 
-<div align="center"><h1>👨‍💻 Nitin Rathod</h1><h3>DevOps & Cloud Engineer</h3><p><b>Cloud Infrastructure • CI/CD • Containers • Kubernetes • Infrastructure as Code • Automation</b></p></div>
+<div align="center"><h1>👨‍💻 DevOps & Cloud Engineer</h1><p><b>Cloud Infrastructure • CI/CD • Containers • Kubernetes • Infrastructure as Code • Automation</b></p></div>
 
 > **Automate what can be automated. Version what can be versioned. Monitor what can fail. Improve everything.**
 
@@ -69,4 +69,4 @@
 
 ---
 
-<div align="center"><img src="./github-banner.png" width="100%" alt="DevOps Banner" /><br><br><b>👨‍💻 Nitin Rathod | DevOps & Cloud Engineer</b></div>
+<div align="center"><img src="./github-banner.png" width="100%" alt="DevOps Banner" /></div>
