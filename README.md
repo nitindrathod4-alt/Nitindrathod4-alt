@@ -3,7 +3,7 @@
 </div>
 
 <div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&pause=900&color=00BFFF&center=true&vCenter=true&width=850&lines=Cloud+%26+DevOps;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Automation;BUILD+%E2%80%A2+DEPLOY+%E2%80%A2+OBSERVE+%E2%80%A2+IMPROVE" /></div>
-<p align="center"><img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" /> <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" /> <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" /></p>
+<p align="center"><a href="./docs/index.html"><img src="https://img.shields.io/badge/%F0%9F%9A%80%20OPEN%20DEVOPS%20DASHBOARD-0b1728?style=for-the-badge&logo=github&logoColor=white" /></a> <img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" /> <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" /> <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" /></p>
 
 ## 🎛️ DevOps Engineering Dashboard
 <div align="center"><img src="./assets/premium-devops-dashboard.svg" width="100%" alt="Premium DevOps engineering dashboard" /></div>
@@ -92,6 +92,17 @@ Terraform → fmt → validate → plan → review → apply → AWS → drift c
 **SLI → SLO → Error Budget → MTTR → Post-Incident Improvement**
 
 ---
+
+## 🚀 Project Showcase
+**[Open the full DevOps project case studies →](./docs/project-showcase.md)**
+
+| Area | Engineering focus |
+|---|---|
+| 3-Tier Application | AWS + Docker + Kubernetes + private data |
+| Repository Intelligence | GitHub API + Actions + generated metrics |
+| Infrastructure Validation | Terraform + automated validation |
+| Kubernetes Operations | Deployments + probes + scaling + rollback |
+| DevSecOps | Security checks + controlled delivery |
 
 ## 📊 GitHub Analytics
 <div align="center"><img height="180" src="https://github-readme-stats.vercel.app/api?username=nitindrathod4-alt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" /> <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=nitindrathod4-alt&theme=tokyonight&hide_border=true" /></div>
