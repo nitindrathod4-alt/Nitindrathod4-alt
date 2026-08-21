@@ -1,10 +1,9 @@
 <div align="center">
   <img src="./github-banner.png" width="100%" alt="Nitin Rathod - DevOps & Cloud Engineer" />
+  <img src="./assets/devops-engineer-signature.svg" width="100%" alt="Nitin Rathod DevOps Engineer" />
 </div>
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=900&color=00BFFF&center=true&vCenter=true&width=850&lines=DevOps+%26+Cloud+Engineer;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Cloud+Automation;Build+%E2%80%A2+Automate+%E2%80%A2+Deploy+%E2%80%A2+Scale" />
-</div>
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=900&color=00BFFF&center=true&vCenter=true&width=850&lines=DevOps+%26+Cloud+Engineer;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Cloud+Automation;Build+%E2%80%A2+Automate+%E2%80%A2+Deploy+%E2%80%A2+Scale" /></div>
 
 <p align="center"><img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" /> <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" /> <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" /></p>
 
@@ -19,8 +18,6 @@
 <div align="center"><h1>👨‍💻 Nitin Rathod</h1><h3>DevOps & Cloud Engineer</h3><p><b>Cloud Infrastructure • CI/CD • Containers • Kubernetes • Infrastructure as Code • Automation</b></p></div>
 
 > **Automate what can be automated. Version what can be versioned. Monitor what can fail. Improve everything.**
-
----
 
 ## 🧰 Tech Stack
 <div align="center"><img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,jenkins,linux,git,github,bash,java,spring,nodejs,react,mongodb,maven" /></div>
