@@ -3,18 +3,22 @@
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00BFFF&center=true&vCenter=true&width=850&lines=DevOps+%26+Cloud+Engineer;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Cloud+Automation;Build+%E2%80%A2+Automate+%E2%80%A2+Deploy+%E2%80%A2+Scale" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=900&color=00BFFF&center=true&vCenter=true&width=850&lines=DevOps+%26+Cloud+Engineer;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Cloud+Automation;Build+%E2%80%A2+Automate+%E2%80%A2+Deploy+%E2%80%A2+Scale" />
 </div>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" />
   <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" />
   <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" />
-  <img src="https://img.shields.io/github/actions/workflow/status/nitindrathod4-alt/Nitindrathod4-alt/profile-pulse.yml?label=PROFILE%20LIVE&style=for-the-badge" />
+  <img src="https://img.shields.io/github/actions/workflow/status/nitindrathod4-alt/Nitindrathod4-alt/profile-pulse.yml?label=PROFILE%20AUTOMATION&style=for-the-badge" />
 </p>
 
 <div align="center">
-  <img src="./assets/profile-pulse.svg" width="100%" alt="Live profile pulse" />
+  <img src="./assets/profile-pulse.svg" width="100%" alt="Live GitHub profile analytics" />
+</div>
+
+<div align="center">
+  <img src="./assets/live-devops.svg" width="100%" alt="Live DevOps control center" />
 </div>
 
 ---
@@ -66,6 +70,18 @@ I enjoy turning **source code into reliable production systems** through automat
 
 ---
 
+## 🔄 Live Automation Layer
+
+This profile is not intended to be a static page. GitHub Actions periodically regenerates the live dashboard from GitHub API data, while the README surfaces live badges, analytics and activity widgets.
+
+**Automation workflow:** `Profile Pulse`  
+**Refresh:** scheduled + manual dispatch  
+**Live data:** public repositories • followers • total stars • workflow status
+
+[![Profile Pulse](https://img.shields.io/github/actions/workflow/status/nitindrathod4-alt/Nitindrathod4-alt/profile-pulse.yml?label=Profile%20Pulse&style=for-the-badge)](../../actions/workflows/profile-pulse.yml)
+
+---
+
 ## 🏗️ Enterprise DevOps Architecture
 
 ```text
@@ -91,6 +107,25 @@ Developer → GitHub → Jenkins → Build → Quality → Docker → Registry
 
 ---
 
+## ☁️ AWS Architecture
+
+```text
+AWS CLOUD → IAM + VPC + S3 → Public / Private Subnets
+                                      │
+                         ┌────────────┴────────────┐
+                         ▼                         ▼
+                        ALB                       EC2
+                                                   │
+                                                   ▼
+                                                  EKS
+                                                   │
+                                              Kubernetes
+                                                   │
+                                              CloudWatch
+```
+
+---
+
 ## 🔄 End-to-End CI/CD
 
 ```text
@@ -109,32 +144,6 @@ SOURCE → GITHUB → JENKINS → MAVEN → SONARQUBE → DOCKER
 
 ---
 
-## ☁️ AWS Architecture
-
-```text
-                         AWS CLOUD
-                            │
-              ┌─────────────┼─────────────┐
-              ▼             ▼             ▼
-             IAM           VPC            S3
-                            │
-                    ┌───────┴───────┐
-                    ▼               ▼
-                 Public           Private
-                 Subnet           Subnet
-                    │               │
-                   ALB             EC2
-                                    │
-                                    ▼
-                                   EKS
-                                    │
-                               Kubernetes
-                                    │
-                               CloudWatch
-```
-
----
-
 ## ☸️ Kubernetes Production Concepts
 
 | Concept | Focus |
@@ -149,16 +158,6 @@ SOURCE → GITHUB → JENKINS → MAVEN → SONARQUBE → DOCKER
 | LoadBalancer | External access |
 | Health Checks | Reliability |
 | Troubleshooting | CrashLoopBackOff / ImagePullBackOff |
-
----
-
-## 🏗️ Terraform Workflow
-
-```text
-CODE → INIT → VALIDATE → PLAN → APPLY → AWS INFRASTRUCTURE
-                                  ↓
-                         REPEATABLE ENVIRONMENT
-```
 
 ---
 
@@ -219,8 +218,6 @@ PROBLEM → INVESTIGATE → LOGS / METRICS → ROOT CAUSE
 <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=nitindrathod4-alt&theme=tokyonight&hide_border=true" />
 </div>
 
-<br>
-
 <div align="center">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nitindrathod4-alt&layout=compact&theme=tokyonight&hide_border=true" />
 </div>
@@ -277,20 +274,25 @@ LINUX → GIT → DOCKER → JENKINS → AWS → TERRAFORM
 ## 🧪 Troubleshooting Checklist
 
 ```text
-☑ Pod Status
-☑ Logs
-☑ Describe Resource
-☑ Image
-☑ Environment Variables
-☑ Networking
-☑ IAM
-☑ Security Groups
-☑ Services / Endpoints
-☑ Deployment
-☑ Root Cause
-☑ Fix
-☑ Monitor
+☑ Pod Status → ☑ Logs → ☑ Describe → ☑ Image
+☑ Environment → ☑ Networking → ☑ IAM → ☑ Security
+☑ Services → ☑ Endpoints → ☑ Deployment → ☑ Root Cause
+☑ Fix → ☑ Test → ☑ Monitor → ☑ Document
 ```
+
+---
+
+## 📡 Dynamic Profile Stack
+
+| Layer | Dynamic Element |
+|---|---|
+| 🟢 Status | GitHub Actions workflow status |
+| 📊 Analytics | GitHub Stats / Streak / Languages |
+| 🏆 Activity | Trophy + contribution graph |
+| 📈 Metrics | Profile views / followers / stars |
+| ⚙️ Automation | Scheduled Profile Pulse workflow |
+| 🖼️ Dashboard | Generated SVG control center |
+| 🔄 Refresh | Automated + manual workflow dispatch |
 
 ---
 
@@ -306,15 +308,6 @@ LINUX → GIT → DOCKER → JENKINS → AWS → TERRAFORM
 | ⚙️ Automation | Reduce manual work |
 | 🚀 Platform Engineering | Developer-focused infrastructure |
 | 🌐 Cloud Networking | Secure connectivity |
-
----
-
-## 📡 Live Profile
-
-This profile contains an automated **GitHub Actions workflow** that refreshes a live SVG dashboard with current public-repository, follower and star information. The workflow can run automatically and can also be triggered manually.
-
-**Automation:** `Profile Pulse`  
-**Status:** [![Profile Pulse](https://img.shields.io/github/actions/workflow/status/nitindrathod4-alt/Nitindrathod4-alt/profile-pulse.yml?label=Profile%20Pulse&style=flat-square)](../../actions/workflows/profile-pulse.yml)
 
 ---
 
