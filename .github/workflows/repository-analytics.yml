@@ -1,0 +1,30 @@
+name: Repository Analytics
+
+on:
+  schedule:
+    - cron: '37 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build live analytics
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p assets/data
+          gh api repos/nitindrathod4-alt/Nitindrathod4-alt --jq '{stars:.stargazers_count,forks:.forks_count,watchers:.watchers_count,issues:.open_issues_count}' > assets/data/repository.json
+          gh api users/nitindrathod4-alt/repos?per_page=100 --paginate --jq '[.[] | {name,stars:.stargazers_count,forks:.forks_count,language,updated:.updated_at}] | sort_by(-.stars) | .[:8]' > assets/data/top-repositories.json
+          gh api users/nitindrathod4-alt/events/public?per_page=100 --paginate --jq '[.[] | {type,repo:.repo.name,created_at}] | .[:15]' > assets/data/recent-activity.json
+      - name: Commit analytics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/data/
+          git diff --cached --quiet || git commit -m 'chore: refresh repository analytics'
+          git push
