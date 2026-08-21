@@ -1,0 +1,78 @@
+name: Repository Intelligence
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: read
+  issues: read
+
+jobs:
+  intelligence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Collect repository metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir -p generated
+          gh api "repos/$REPO" > generated/repository.json
+          gh api "repos/$REPO/commits?per_page=20" > generated/recent-commits.json
+          gh api "repos/$REPO/pulls?state=all&per_page=20" > generated/recent-pulls.json
+          gh api "repos/$REPO/issues?state=all&per_page=20" > generated/recent-issues.json
+
+      - name: Generate intelligence summary
+        env:
+          REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path('generated')
+          repo = json.loads((p/'repository.json').read_text())
+          commits = json.loads((p/'recent-commits.json').read_text())
+          pulls = json.loads((p/'recent-pulls.json').read_text())
+          issues = json.loads((p/'recent-issues.json').read_text())
+          # GitHub's issues endpoint includes pull requests; count issues separately.
+          real_issues = [x for x in issues if 'pull_request' not in x]
+          summary = {
+              'repository': repo.get('full_name'),
+              'generated_at': __import__('datetime').datetime.utcnow().isoformat() + 'Z',
+              'stars': repo.get('stargazers_count', 0),
+              'forks': repo.get('forks_count', 0),
+              'open_issues': repo.get('open_issues_count', 0),
+              'recent_commits_sample': len(commits),
+              'recent_pulls_sample': len(pulls),
+              'recent_issues_sample': len(real_issues),
+              'visibility': repo.get('visibility', 'unknown')
+          }
+          (p/'summary.json').write_text(json.dumps(summary, indent=2))
+          Path('generated/README.md').write_text(
+              '# Repository Intelligence\n\n'
+              'Generated automatically by GitHub Actions from the repository API.\n\n'
+              f"- Repository: `{summary['repository']}`\n"
+              f"- Visibility: `{summary['visibility']}`\n"
+              f"- Stars: `{summary['stars']}`\n"
+              f"- Forks: `{summary['forks']}`\n"
+              f"- Open issues: `{summary['open_issues']}`\n"
+              f"- Recent commit sample: `{summary['recent_commits_sample']}`\n"
+              f"- Recent PR sample: `{summary['recent_pulls_sample']}`\n"
+              f"- Recent issue sample: `{summary['recent_issues_sample']}`\n"
+              f"- Generated: `{summary['generated_at']}`\n"
+          )
+          PY
+
+      - name: Commit generated intelligence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add generated/
+          git diff --cached --quiet || git commit -m 'chore: update repository intelligence'
+          git push
