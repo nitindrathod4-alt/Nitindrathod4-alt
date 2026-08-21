@@ -1,0 +1,62 @@
+name: DevOps Quality Gate
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate YAML
+        run: |
+          python - <<'PY'
+          import pathlib
+          files = list(pathlib.Path('.').rglob('*.yml')) + list(pathlib.Path('.').rglob('*.yaml'))
+          print(f'Found {len(files)} YAML files')
+          for f in files:
+              if f.stat().st_size == 0:
+                  raise SystemExit(f'Empty YAML file: {f}')
+          PY
+
+      - name: Validate Dockerfiles
+        run: |
+          files=$(find . -name Dockerfile -type f -not -path './.git/*')
+          if [ -n "$files" ]; then
+            echo "$files"
+            while IFS= read -r file; do
+              grep -q '^FROM ' "$file" || { echo "Invalid Dockerfile: $file"; exit 1; }
+            done <<< "$files"
+          else
+            echo 'No Dockerfiles found; skipped.'
+          fi
+
+      - name: Validate Terraform files
+        run: |
+          if find . -name '*.tf' -type f -not -path './.git/*' | grep -q .; then
+            docker run --rm -v "$PWD:/workspace" -w /workspace hashicorp/terraform:1.9 fmt -check -recursive
+          else
+            echo 'No Terraform files found; skipped.'
+          fi
+
+      - name: Validate Kubernetes manifests
+        run: |
+          files=$(find . -type f \( -name '*-deployment.yaml' -o -name '*-service.yaml' -o -name '*-ingress.yaml' \) -not -path './.git/*')
+          if [ -n "$files" ]; then
+            echo "$files"
+            while IFS= read -r file; do
+              grep -Eq '^(apiVersion|kind):' "$file" || { echo "Invalid Kubernetes manifest: $file"; exit 1; }
+            done <<< "$files"
+          else
+            echo 'No Kubernetes manifests matching deployment/service/ingress naming; skipped.'
+          fi
+
+      - name: Quality gate passed
+        run: echo 'DevOps validation gate completed successfully.'
