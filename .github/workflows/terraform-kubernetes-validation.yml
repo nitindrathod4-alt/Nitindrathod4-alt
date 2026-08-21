@@ -1,0 +1,55 @@
+name: Infrastructure Validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Terraform validation when Terraform exists
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+
+      - name: Find and validate Terraform
+        shell: bash
+        run: |
+          files=$(find . -name '*.tf' -not -path './.git/*' -print)
+          if [ -z "$files" ]; then
+            echo 'No Terraform files found — skipping Terraform validation.'
+            exit 0
+          fi
+          dirs=$(printf '%s\n' "$files" | xargs -n1 dirname | sort -u)
+          while read -r dir; do
+            echo "Validating $dir"
+            terraform -chdir="$dir" fmt -check -recursive
+            terraform -chdir="$dir" init -backend=false -input=false
+            terraform -chdir="$dir" validate
+          done <<< "$dirs"
+
+      - name: Kubernetes manifest syntax check when manifests exist
+        shell: bash
+        run: |
+          files=$(find . -type f \( -name '*.yaml' -o -name '*.yml' \) -not -path './.git/*' -not -path './.github/*' -print)
+          if [ -z "$files" ]; then
+            echo 'No Kubernetes YAML candidates found — skipping.'
+            exit 0
+          fi
+          python -m pip install pyyaml -q
+          python - <<'PY'
+          import pathlib, yaml
+          for p in pathlib.Path('.').rglob('*'):
+              if p.suffix not in {'.yaml','.yml'} or '.git' in p.parts or '.github' in p.parts:
+                  continue
+              try:
+                  list(yaml.safe_load_all(p.read_text()))
+                  print('YAML OK:', p)
+              except Exception as e:
+                  raise SystemExit(f'Invalid YAML: {p}: {e}')
+          PY
