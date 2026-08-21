@@ -7,6 +7,7 @@
 <p align="center"><img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" /> <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" /> <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" /></p>
 
 <div align="center">
+<img src="./assets/devops-command-center.svg" width="100%" alt="DevOps Command Center" />
 <img src="./assets/devops-control-center.svg" width="100%" alt="DevOps Control Center" />
 <img src="./assets/deployment-center.svg" width="100%" alt="Deployment Center" />
 <img src="./assets/profile-pulse.svg" width="100%" alt="Live profile analytics" />
@@ -44,7 +45,6 @@
 ---
 
 ### 🔐 Why This Architecture?
-
 | Concern | Design | Benefit |
 |---|---|---|
 | 🔐 Security | Public edge → private app → private data | Smaller attack surface |
@@ -57,30 +57,23 @@
 
 ### 📈 What Happens When Traffic Increases?
 <div align="center"><img src="./assets/request-response-center.svg" width="100%" alt="Traffic scaling architecture" /></div>
-
 When an HPA-based Kubernetes setup is configured, the application tier can add replicas as workload increases. The database needs its own capacity, caching, read-replica or managed-database strategy.
 
 ### 🩺 Failure Scenario
 <div align="center"><img src="./assets/request-response-center.svg" width="100%" alt="Failure resilient architecture" /></div>
-
 If one backend pod becomes unhealthy, health probes can remove it from service while healthy replicas continue handling traffic. Logs and metrics help identify the root cause.
 
 ### 🔄 Complete Engineering Lifecycle
 <div align="center"><img src="./assets/deployment-center.svg" width="100%" alt="DevOps deployment lifecycle" /></div>
 
-```text
-CODE → GITHUB → CI VALIDATION → BUILD IMAGE → REGISTRY → KUBERNETES → HEALTH CHECKS → LOGS/METRICS → ALERT → INVESTIGATE → FIX → TEST → DEPLOY
-```
+`CODE → GITHUB → CI → QUALITY + SECURITY → BUILD → REGISTRY → KUBERNETES → HEALTH → OBSERVE → ALERT → FIX → TEST → DEPLOY`
 
 ### 🛡️ Security Flow
-<div align="center"><img src="./assets/request-response-center.svg" width="100%" alt="Security boundary" /></div>
-
 **🌍 Public Internet → ALB / Ingress → Frontend → Private Backend → Private Database**
 
 > 🚫 The database is not publicly exposed.
 
 ### 📊 Scaling Strategy
-
 | Layer | Scaling Strategy | Main Goal |
 |---|---|---|
 | 🌐 Presentation | Load balancing + replicas / CDN | Handle user traffic |
@@ -89,34 +82,61 @@ CODE → GITHUB → CI VALIDATION → BUILD IMAGE → REGISTRY → KUBERNETES �
 
 ---
 
+## 🎛️ DevOps Command Center
+<div align="center"><img src="./assets/devops-command-center.svg" width="100%" alt="DevOps command center" /></div>
+
+**Source → CI/CD → Container → Kubernetes → Cloud → Observability → Incident Response**
+
 ## ☸️ Kubernetes Operations Center
 <div align="center"><img src="./assets/kubernetes-operations-center.svg" width="100%" alt="Kubernetes operations center" /></div>
-
 **Deploy → Probe → Observe → Scale → Rollout → Rollback**
-
-The operations model covers Deployments, Pods, Services, Ingress, HPA, ConfigMaps, Secrets, health probes, rolling updates and self-healing behavior.
 
 ## ☁️ AWS Infrastructure Center
 <div align="center"><img src="./assets/aws-infrastructure-center.svg" width="100%" alt="AWS infrastructure architecture" /></div>
-
-**Route 53 → ALB → VPC → EKS / Compute → Private Data**, with IAM, security groups, network boundaries, encryption, backups and monitoring around the infrastructure.
+**Route 53 → ALB → VPC → EKS / Compute → Private Data**, with IAM, network boundaries, encryption, backups and monitoring.
 
 ## 🛡️ DevSecOps Security Center
 <div align="center"><img src="./assets/devsecops-center.svg" width="100%" alt="DevSecOps security pipeline" /></div>
-
 **Code Scan → Dependency Scan → Secret Scan → Container Scan → Secure Deploy**
-
-Security is treated as a pipeline quality gate instead of a final manual check.
 
 ## 📊 Observability Center
 <div align="center"><img src="./assets/observability-center.svg" width="100%" alt="DevOps observability dashboard" /></div>
-
-**Observe → Detect → Investigate → Respond** using system health, CPU, memory, request rate, latency, error rate, pod health, logs and alerts.
+**Observe → Detect → Investigate → Respond** using health, CPU, memory, request rate, latency, errors, logs and alerts.
 
 ## 🚨 Incident Response Center
 <div align="center"><img src="./assets/incident-response-center.svg" width="100%" alt="Incident response lifecycle" /></div>
-
 **Alert → Investigate → Root Cause → Fix/Test → Recover → Prevent → Automate → Monitor → Improve**
+
+## 🧪 DevOps Troubleshooting Playbook
+<div align="center"><img src="./assets/troubleshooting-playbook.svg" width="100%" alt="DevOps troubleshooting playbook" /></div>
+
+| Incident | First evidence to inspect |
+|---|---|
+| `CrashLoopBackOff` | Pod events + container logs + previous logs |
+| `ImagePullBackOff` | Image name/tag + registry access + pod events |
+| `Pending Pod` | Scheduler events + resources + node conditions |
+| `502 / 503` | Service endpoints + ingress + backend health |
+| `DB Connection` | Secrets/config + network path + DB availability |
+| `OOMKilled` | Container memory limits + workload usage + metrics |
+
+**Method:** `SYMPTOM → EVIDENCE → ROOT CAUSE → FIX → TEST → PREVENTION`
+
+## 🧱 Infrastructure as Code Lifecycle
+```text
+Terraform Code → fmt → validate → plan → review → apply → AWS → drift check
+```
+
+## 🚀 Deployment Strategy Lab
+| Strategy | Traffic model | Strength |
+|---|---|---|
+| Rolling | Gradually replace replicas | Simple, low operational overhead |
+| Blue/Green | Switch traffic between environments | Fast rollback |
+| Canary | Release to a small traffic slice first | Lower blast radius |
+
+## 🧠 SRE & Reliability Center
+<div align="center"><img src="./assets/sre-reliability-center.svg" width="100%" alt="SRE reliability center" /></div>
+
+**SLI → SLO → Error Budget → MTTR → Post-Incident Improvement**
 
 ---
 
