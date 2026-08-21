@@ -10,15 +10,13 @@
   <img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" />
   <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" />
   <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" />
-  <img src="https://img.shields.io/github/actions/workflow/status/nitindrathod4-alt/Nitindrathod4-alt/profile-pulse.yml?label=PROFILE%20AUTOMATION&style=for-the-badge" />
+  <img src="https://img.shields.io/github/actions/workflow/status/nitindrathod4-alt/Nitindrathod4-alt/profile-pulse.yml?label=AUTOMATION&style=for-the-badge" />
 </p>
 
 <div align="center">
   <img src="./assets/profile-pulse.svg" width="100%" alt="Live GitHub profile analytics" />
-</div>
-
-<div align="center">
   <img src="./assets/live-devops.svg" width="100%" alt="Live DevOps control center" />
+  <img src="./assets/architecture-pulse.svg" width="100%" alt="Cloud-native delivery flow" />
 </div>
 
 ---
@@ -32,11 +30,7 @@
 
 ## 🚀 Professional Profile
 
-I am a **DevOps & Cloud Engineer** focused on building reliable, automated and scalable infrastructure. I work across cloud infrastructure, containerization, CI/CD, Infrastructure as Code, Kubernetes and cloud-native operations.
-
-I enjoy turning **source code into reliable production systems** through automation, repeatability, security and observability.
-
-### 💡 Engineering Philosophy
+I am a **DevOps & Cloud Engineer** focused on reliable, automated and scalable infrastructure. I work across AWS cloud infrastructure, containerization, CI/CD, Infrastructure as Code, Kubernetes and cloud-native operations.
 
 > **Automate what can be automated. Version what can be versioned. Monitor what can fail. Improve everything.**
 
@@ -44,16 +38,12 @@ I enjoy turning **source code into reliable production systems** through automat
 
 ## ⚡ Core Expertise
 
-<div align="center">
-
 | ☁️ Cloud | 🔄 Automation | ☸️ Containers | 🏗️ Infrastructure |
 |---|---|---|---|
 | AWS | Jenkins | Docker | Terraform |
 | EC2 | CI/CD | Kubernetes | IAM |
 | VPC | GitHub | Amazon EKS | S3 |
 | ALB | Maven | DockerHub | CloudWatch |
-
-</div>
 
 ---
 
@@ -70,15 +60,44 @@ I enjoy turning **source code into reliable production systems** through automat
 
 ---
 
-## 🔄 Live Automation Layer
+## 🤖 Dynamic Profile Engine
 
-This profile is not intended to be a static page. GitHub Actions periodically regenerates the live dashboard from GitHub API data, while the README surfaces live badges, analytics and activity widgets.
+This profile is powered by **GitHub Actions automation**, generated SVG dashboards and GitHub API data. The profile is designed to evolve instead of remaining a one-time static portfolio.
 
-**Automation workflow:** `Profile Pulse`  
-**Refresh:** scheduled + manual dispatch  
-**Live data:** public repositories • followers • total stars • workflow status
+### 🔄 Automated Data Pipeline
 
-[![Profile Pulse](https://img.shields.io/github/actions/workflow/status/nitindrathod4-alt/Nitindrathod4-alt/profile-pulse.yml?label=Profile%20Pulse&style=for-the-badge)](../../actions/workflows/profile-pulse.yml)
+```text
+GitHub API → GitHub Actions → Data Processing → JSON / SVG → README
+     │              │                │                │          │
+  Profile       Scheduled         Metrics          Dashboards   🔥 LIVE
+  Repos         + Manual          Ranking          Visuals      PROFILE
+  Activity      Dispatch          Activity         Status
+```
+
+### 📊 Live Data
+
+- 📦 Public repository count
+- ⭐ Total repository stars
+- 👥 Followers
+- 🔥 Recent public activity
+- 🏆 Top repositories
+- 🟢 Automation workflow status
+- 📈 Repository metrics
+
+---
+
+## 📡 Repository Intelligence
+
+The repository analytics workflow refreshes machine-readable datasets under `assets/data/`.
+
+| Dataset | Purpose |
+|---|---|
+| `repository.json` | Stars, forks, watchers and open issues |
+| `top-repositories.json` | Top repositories ranked by stars |
+| `recent-activity.json` | Recent public GitHub activity |
+| `profile-pulse.svg` | Live profile metrics |
+| `live-devops.svg` | DevOps control center |
+| `architecture-pulse.svg` | Cloud delivery visualization |
 
 ---
 
@@ -107,6 +126,24 @@ Developer → GitHub → Jenkins → Build → Quality → Docker → Registry
 
 ---
 
+## 🔄 End-to-End CI/CD
+
+```text
+SOURCE → GITHUB → JENKINS → MAVEN → SONARQUBE → DOCKER
+                                              ↓
+                                         DOCKERHUB
+                                              ↓
+                                        AWS / EKS
+                                              ↓
+                                      KUBERNETES
+                                              ↓
+                                          DEPLOY
+                                              ↓
+                                        MONITOR
+```
+
+---
+
 ## ☁️ AWS Architecture
 
 ```text
@@ -122,24 +159,6 @@ AWS CLOUD → IAM + VPC + S3 → Public / Private Subnets
                                               Kubernetes
                                                    │
                                               CloudWatch
-```
-
----
-
-## 🔄 End-to-End CI/CD
-
-```text
-SOURCE → GITHUB → JENKINS → MAVEN → SONARQUBE → DOCKER
-                                              ↓
-                                         DOCKERHUB
-                                              ↓
-                                        AWS / EKS
-                                              ↓
-                                      KUBERNETES
-                                              ↓
-                                          DEPLOY
-                                              ↓
-                                        MONITOR
 ```
 
 ---
@@ -164,28 +183,22 @@ SOURCE → GITHUB → JENKINS → MAVEN → SONARQUBE → DOCKER
 ## 🚀 Featured DevOps Projects
 
 ### ☸️ 01 — Cloud-Native Kubernetes Platform
-**AWS • EKS • Kubernetes • Docker • LoadBalancer**  
-Containerized workloads deployed through Kubernetes on AWS.
+**AWS • EKS • Kubernetes • Docker • LoadBalancer**
 
 ### 🏗️ 02 — AWS Infrastructure Automation
-**Terraform • AWS • IAM • VPC • EC2 • EKS**  
-Repeatable cloud infrastructure using Infrastructure as Code.
+**Terraform • AWS • IAM • VPC • EC2 • EKS**
 
 ### 🔄 03 — Automated CI/CD Platform
-**Jenkins • GitHub • Maven • Docker • DockerHub • AWS**  
-Automated build, quality, containerization and delivery workflow.
+**Jenkins • GitHub • Maven • Docker • DockerHub • AWS**
 
 ### 🏥 04 — Hospital DevOps Platform
-**Docker • AWS • MongoDB • Kubernetes**  
-Full-stack cloud deployment with containerized services.
+**Docker • AWS • MongoDB • Kubernetes**
 
 ### 🤖 05 — AI Interview Platform
-**Docker • AWS • CI/CD • Cloud**  
-Cloud-oriented application deployment and automation.
+**Docker • AWS • CI/CD • Cloud**
 
 ### 💳 06 — NovaPay Banking Platform
-**Docker • Jenkins • AWS • CI/CD**  
-Automated application delivery and cloud deployment practices.
+**Docker • Jenkins • AWS • CI/CD**
 
 ---
 
@@ -211,7 +224,7 @@ PROBLEM → INVESTIGATE → LOGS / METRICS → ROOT CAUSE
 
 ---
 
-## 📊 GitHub Analytics
+## 📈 GitHub Analytics
 
 <div align="center">
 <img height="180" src="https://github-readme-stats.vercel.app/api?username=nitindrathod4-alt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" />
@@ -222,17 +235,13 @@ PROBLEM → INVESTIGATE → LOGS / METRICS → ROOT CAUSE
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nitindrathod4-alt&layout=compact&theme=tokyonight&hide_border=true" />
 </div>
 
+<div align="center"><img src="https://github-readme-activity-graph.vercel.app/graph?username=nitindrathod4-alt&theme=tokyo-night&hide_border=true&area=true" width="100%" /></div>
+
 ---
 
 ## 🏆 GitHub Trophy Wall
 
 <div align="center"><img src="https://github-profile-trophy.vercel.app/?username=nitindrathod4-alt&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=6" /></div>
-
----
-
-## 📈 Contribution Activity
-
-<div align="center"><img src="https://github-readme-activity-graph.vercel.app/graph?username=nitindrathod4-alt&theme=tokyo-night&hide_border=true&area=true" width="100%" /></div>
 
 ---
 
@@ -282,20 +291,6 @@ LINUX → GIT → DOCKER → JENKINS → AWS → TERRAFORM
 
 ---
 
-## 📡 Dynamic Profile Stack
-
-| Layer | Dynamic Element |
-|---|---|
-| 🟢 Status | GitHub Actions workflow status |
-| 📊 Analytics | GitHub Stats / Streak / Languages |
-| 🏆 Activity | Trophy + contribution graph |
-| 📈 Metrics | Profile views / followers / stars |
-| ⚙️ Automation | Scheduled Profile Pulse workflow |
-| 🖼️ Dashboard | Generated SVG control center |
-| 🔄 Refresh | Automated + manual workflow dispatch |
-
----
-
 ## 🧩 Areas I'm Exploring
 
 | Area | Focus |
@@ -326,9 +321,7 @@ LINUX → GIT → DOCKER → JENKINS → AWS → TERRAFORM
 
 <br>
 
-<div align="center">
-<h3>⚡ LEARN • BUILD • AUTOMATE • DEPLOY • SCALE ⚡</h3>
-</div>
+<div align="center"><h3>⚡ LEARN • BUILD • AUTOMATE • DEPLOY • SCALE ⚡</h3></div>
 
 ---
 
