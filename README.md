@@ -13,6 +13,7 @@
 </p>
 
 <div align="center">
+  <img src="./assets/devops-control-center.svg" width="100%" alt="DevOps Control Center" />
   <img src="./assets/profile-pulse.svg" width="100%" alt="Live GitHub profile analytics" />
   <img src="./assets/live-devops.svg" width="100%" alt="DevOps control center" />
 </div>
@@ -31,114 +32,59 @@
 
 ## 🧰 Tech Stack
 
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,jenkins,linux,git,github,bash,java,spring,nodejs,react,mongodb,maven" />
-</div>
-
-<div align="center">
-  <p><b>AWS • Docker • Kubernetes • Terraform • Jenkins • Linux • Git • GitHub • Bash • Java • Spring Boot • Node.js • React • MongoDB • Maven</b></p>
-</div>
+<div align="center"><img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,jenkins,linux,git,github,bash,java,spring,nodejs,react,mongodb,maven" /></div>
 
 ---
 
 ## 🏗️ Enterprise DevOps Architecture
-
 <div align="center"><img src="./assets/enterprise-architecture.svg" width="100%" alt="Enterprise DevOps Architecture" /></div>
 
----
-
 ## 🔄 End-to-End CI/CD
-
 <div align="center"><img src="./assets/cicd-lifecycle.svg" width="100%" alt="End-to-End CI/CD Lifecycle" /></div>
 
----
-
 ## ☁️ AWS Cloud Architecture
-
 <div align="center"><img src="./assets/aws-cloud.svg" width="100%" alt="AWS Cloud Architecture" /></div>
 
----
-
 ## ☸️ Kubernetes Production Lifecycle
-
 <div align="center"><img src="./assets/kubernetes-lifecycle.svg" width="100%" alt="Kubernetes Production Lifecycle" /></div>
 
----
-
 ## 🚀 DevOps Project Portfolio
-
 <div align="center"><img src="./assets/project-showcase.svg" width="100%" alt="DevOps Project Showcase" /></div>
 
----
-
 ## 🧠 DevOps Problem-Solving Lifecycle
-
 <div align="center"><img src="./assets/devops-problem-solving.svg" width="100%" alt="DevOps Problem-Solving Lifecycle" /></div>
 
----
-
 ## 🛡️ DevSecOps & Growth Roadmap
-
 <div align="center"><img src="./assets/devsecops-roadmap.svg" width="100%" alt="DevSecOps Roadmap" /></div>
 
 ---
 
 ## 📈 GitHub Analytics
-
 <div align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=nitindrathod4-alt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" />
-  <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=nitindrathod4-alt&theme=tokyonight&hide_border=true" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=nitindrathod4-alt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" />
+<img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=nitindrathod4-alt&theme=tokyonight&hide_border=true" />
 </div>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nitindrathod4-alt&layout=compact&theme=tokyonight&hide_border=true" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nitindrathod4-alt&theme=tokyo-night&hide_border=true&area=true" width="100%" />
-</div>
-
----
+<div align="center"><img src="https://github-readme-activity-graph.vercel.app/graph?username=nitindrathod4-alt&theme=tokyo-night&hide_border=true&area=true" width="100%" /></div>
 
 ## 🏆 GitHub Trophy Wall
-
 <div align="center"><img src="https://github-profile-trophy.vercel.app/?username=nitindrathod4-alt&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=6" /></div>
 
----
-
 ## 📊 Live Profile Automation
-
-<div align="center">
-  <img src="./assets/repository-intelligence.svg" width="100%" alt="Repository Intelligence" />
-</div>
+<div align="center"><img src="./assets/repository-intelligence.svg" width="100%" alt="Repository Intelligence" /></div>
 
 ---
 
 ## 📌 Engineering Principles
-
-<div align="center">
-  <b>AUTOMATION FIRST</b> • <b>INFRASTRUCTURE AS CODE</b> • <b>SECURITY BY DESIGN</b> • <b>OBSERVABILITY</b> • <b>RELIABILITY</b> • <b>CONTINUOUS IMPROVEMENT</b>
-</div>
-
----
+<div align="center"><b>AUTOMATION FIRST</b> • <b>INFRASTRUCTURE AS CODE</b> • <b>SECURITY BY DESIGN</b> • <b>OBSERVABILITY</b> • <b>RELIABILITY</b> • <b>CONTINUOUS IMPROVEMENT</b></div>
 
 ## 📫 Connect
-
 <div align="center">
-  <a href="mailto:nitindrathod4@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://github.com/nitindrathod4-alt"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+<a href="mailto:nitindrathod4@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://github.com/nitindrathod4-alt"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
 </div>
 
-<br>
-
-<div align="center">
-  <h3>⚡ LEARN • BUILD • AUTOMATE • DEPLOY • SCALE ⚡</h3>
-</div>
+<div align="center"><h3>⚡ LEARN • BUILD • AUTOMATE • DEPLOY • SCALE ⚡</h3></div>
 
 ---
 
-<div align="center">
-  <img src="./github-banner.png" width="100%" alt="DevOps Banner" />
-  <br><br>
-  <b>👨‍💻 Nitin Rathod | DevOps & Cloud Engineer</b>
-</div>
+<div align="center"><img src="./github-banner.png" width="100%" alt="DevOps Banner" /><br><br><b>👨‍💻 Nitin Rathod | DevOps & Cloud Engineer</b></div>
