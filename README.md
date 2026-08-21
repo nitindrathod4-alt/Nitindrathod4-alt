@@ -95,6 +95,23 @@ Terraform → fmt → validate → plan → review → apply → AWS → drift c
 
 ---
 
+## 🚨 Incident Response Runbooks
+Practical investigation paths for common Kubernetes and application failures.
+
+**[Open the incident runbooks →](./docs/incident-runbooks.md)**
+
+## 💾 Disaster Recovery & Resilience
+**[Open the recovery model →](./docs/disaster-recovery.md)**
+
+`BACKUP → DETECT → ISOLATE → RESTORE → VALIDATE → RECOVER → MONITOR → IMPROVE`
+
+## 🧠 Engineering Decision Log
+Why the architecture uses its major engineering patterns instead of simply listing technologies.
+
+**[Open the decision log →](./docs/engineering-decision-log.md)**
+
+---
+
 ## 🚀 Project Showcase
 **[Open the full DevOps project case studies →](./docs/project-showcase.md)**
 
@@ -105,6 +122,7 @@ Terraform → fmt → validate → plan → review → apply → AWS → drift c
 | Infrastructure Validation | Terraform + automated validation |
 | Kubernetes Operations | Deployments + probes + scaling + rollback |
 | DevSecOps | Security checks + controlled delivery |
+| Reliability | Incident response + recovery + prevention |
 
 ## 📊 GitHub Profile
 <div align="center">
@@ -116,11 +134,13 @@ Terraform → fmt → validate → plan → review → apply → AWS → drift c
 ---
 
 ## 🎯 Engineering Model
-<div align="center"><b>CODE → SECURE → BUILD → DEPLOY → SCALE → OBSERVE → RESPOND → IMPROVE</b></div>
+<div align="center"><b>CODE → SECURE → BUILD → DEPLOY → SCALE → OBSERVE → RESPOND → RECOVER → IMPROVE</b></div>
 
-> **Architecture note:** The diagrams document a deployment-ready engineering model; they do not claim that a live AWS/EKS production environment is currently connected.
+> **Architecture note:** The diagrams and runbooks document a deployment-ready engineering model; they do not claim that a live AWS/EKS production environment is currently connected.
 
 ## 📫 Connect
 <div align="center"><a href="mailto:nitindrathod4@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a> <a href="https://github.com/nitindrathod4-alt"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a></div>
 
-<div align="center"><h3>⚡ BUILD • AUTOMATE • DEPLOY • SCALE ⚡</h3></div>
+<div align="center"><h3>⚡ BUILD • AUTOMATE • DEPLOY • SCALE • RECOVER ⚡</h3></div>
+
+> **Source code notice:** This repository is publicly visible for portfolio and demonstration purposes. All source code and original assets are protected under the repository's All Rights Reserved notice. No open-source reuse license is granted.
