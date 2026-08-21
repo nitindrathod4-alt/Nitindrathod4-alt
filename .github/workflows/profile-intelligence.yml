@@ -1,0 +1,48 @@
+name: Profile Intelligence
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Collect repository metrics
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data
+          gh api repos/${{ github.repository }} --jq '{name,stars: .stargazers_count,forks: .forks_count,watchers: .subscribers_count,open_issues: .open_issues_count,size_kb: .size,default_branch}' > data/repository.json
+          gh api repos/${{ github.repository }}/languages > data/languages.json
+          gh api repos/${{ github.repository }}/commits?per_page=10 --jq '[.[] | {sha: .sha[0:7], date: .commit.author.date, message: .commit.message, author: .author.login}]' > data/recent-commits.json
+          python - <<'PY'
+          import json, pathlib
+          r=json.load(open('data/repository.json'))
+          l=json.load(open('data/languages.json'))
+          c=json.load(open('data/recent-commits.json'))
+          out={
+            'generated_at': __import__('datetime').datetime.utcnow().isoformat()+'Z',
+            'repository': r,
+            'language_count': len(l),
+            'languages': l,
+            'recent_commit_count': len(c),
+            'recent_commits': c
+          }
+          pathlib.Path('data/profile-metrics.json').write_text(json.dumps(out, indent=2))
+          PY
+
+      - name: Commit updated metrics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/
+          git diff --cached --quiet || git commit -m 'chore: refresh profile intelligence'
+          git push
