@@ -1,0 +1,29 @@
+name: DevOps Validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@master
+
+      - name: Validate shell scripts
+        run: |
+          chmod +x scripts/*.sh
+          for f in scripts/*.sh; do
+            bash -n "$f"
+          done
+
+      - name: Repository health check
+        run: ./scripts/health-check.sh https://github.com/nitindrathod4-alt
+
+      - name: Docker CLI check
+        run: docker --version
