@@ -41,51 +41,50 @@ jobs:
           pulls = json.loads((p/'recent-pulls.json').read_text())
           issues = json.loads((p/'recent-issues.json').read_text())
           real_issues = [x for x in issues if 'pull_request' not in x]
+          open_pulls = [x for x in pulls if x.get('state') == 'open']
+          languages = {}
           summary = {
               'repository': repo.get('full_name'),
               'generated_at': datetime.now(timezone.utc).isoformat(),
               'stars': repo.get('stargazers_count', 0),
               'forks': repo.get('forks_count', 0),
+              'watchers': repo.get('subscribers_count', 0),
               'open_issues': repo.get('open_issues_count', 0),
+              'open_prs_sample': len(open_pulls),
               'recent_commits_sample': len(commits),
               'recent_pulls_sample': len(pulls),
               'recent_issues_sample': len(real_issues),
-              'visibility': repo.get('visibility', 'unknown')
+              'visibility': repo.get('visibility', 'unknown'),
+              'default_branch': repo.get('default_branch', 'unknown')
           }
           (p/'summary.json').write_text(json.dumps(summary, indent=2))
           Path('generated/README.md').write_text(
-              '# Repository Intelligence\n\n'
-              'Generated automatically by GitHub Actions from the repository API.\n\n'
-              f"- Repository: `{summary['repository']}`\n"
-              f"- Visibility: `{summary['visibility']}`\n"
-              f"- Stars: `{summary['stars']}`\n"
-              f"- Forks: `{summary['forks']}`\n"
-              f"- Open issues: `{summary['open_issues']}`\n"
-              f"- Recent commit sample: `{summary['recent_commits_sample']}`\n"
-              f"- Recent PR sample: `{summary['recent_pulls_sample']}`\n"
-              f"- Recent issue sample: `{summary['recent_issues_sample']}`\n"
-              f"- Generated: `{summary['generated_at']}`\n"
+              '# Repository Intelligence\n\nGenerated automatically by GitHub Actions from the repository API.\n\n'
+              + '\n'.join(f"- {k.replace('_',' ').title()}: `{v}`" for k,v in summary.items()) + '\n'
           )
           title = escape(summary['repository'] or 'Repository Intelligence')
           stamp = escape(summary['generated_at'])
           cards = [
-              ('STARS', summary['stars']), ('FORKS', summary['forks']),
-              ('OPEN ISSUES', summary['open_issues']), ('COMMITS SAMPLE', summary['recent_commits_sample']),
-              ('PR SAMPLE', summary['recent_pulls_sample']), ('ISSUE SAMPLE', summary['recent_issues_sample'])
+              ('STARS', summary['stars']), ('FORKS', summary['forks']), ('WATCHERS', summary['watchers']),
+              ('OPEN ISSUES', summary['open_issues']), ('OPEN PR SAMPLE', summary['open_prs_sample']),
+              ('COMMITS SAMPLE', summary['recent_commits_sample']), ('PR SAMPLE', summary['recent_pulls_sample']),
+              ('ISSUE SAMPLE', summary['recent_issues_sample'])
           ]
-          svg = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430">
+          svg = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
           <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#07101d"/><stop offset="1" stop-color="#101b31"/></linearGradient></defs>
-          <rect width="1100" height="430" rx="24" fill="url(#bg)"/><rect x="1" y="1" width="1098" height="428" rx="23" fill="none" stroke="#294666"/>
-          <text x="48" y="58" fill="#67e8f9" font-family="Arial" font-size="13" letter-spacing="3">REPOSITORY INTELLIGENCE</text>
+          <rect width="1100" height="520" rx="24" fill="url(#bg)"/><rect x="1" y="1" width="1098" height="518" rx="23" fill="none" stroke="#294666"/>
+          <text x="48" y="58" fill="#67e8f9" font-family="Arial" font-size="13" letter-spacing="3">REPOSITORY INTELLIGENCE · AUTOMATED</text>
           <text x="48" y="95" fill="#f3f7ff" font-family="Arial" font-size="28" font-weight="700">{title}</text>
-          <text x="48" y="122" fill="#91a4bf" font-family="Arial" font-size="13">GitHub API → Data Processing → JSON / SVG</text>''']
+          <text x="48" y="122" fill="#91a4bf" font-family="Arial" font-size="13">GitHub API → Analyze → JSON → SVG → README</text>''']
           for i, (label, value) in enumerate(cards):
-              x = 48 + (i % 3) * 340
-              y = 155 + (i // 3) * 105
-              svg.append(f'<rect x="{x}" y="{y}" width="310" height="82" rx="14" fill="#0b1728" stroke="#243e5c"/>')
-              svg.append(f'<text x="{x+18}" y="{y+25}" fill="#67e8f9" font-family="Arial" font-size="11" letter-spacing="2">{label}</text>')
-              svg.append(f'<text x="{x+18}" y="{y+57}" fill="#ffffff" font-family="Arial" font-size="24" font-weight="700">{value}</text>')
-          svg.append(f'<text x="48" y="382" fill="#79f2a8" font-family="Arial" font-size="12">AUTOMATED · {stamp}</text>')
+              x = 48 + (i % 4) * 260
+              y = 150 + (i // 4) * 105
+              svg.append(f'<rect x="{x}" y="{y}" width="235" height="82" rx="14" fill="#0b1728" stroke="#243e5c"/>')
+              svg.append(f'<text x="{x+16}" y="{y+25}" fill="#67e8f9" font-family="Arial" font-size="10" letter-spacing="1.5">{label}</text>')
+              svg.append(f'<text x="{x+16}" y="{y+57}" fill="#ffffff" font-family="Arial" font-size="24" font-weight="700">{value}</text>')
+          svg.append(f'<text x="48" y="390" fill="#79f2a8" font-family="Arial" font-size="12">● AUTOMATED DATA PIPELINE</text>')
+          svg.append(f'<text x="48" y="418" fill="#91a4bf" font-family="Arial" font-size="12">Default branch: {escape(summary["default_branch"])} · Visibility: {escape(summary["visibility"])}</text>')
+          svg.append(f'<text x="48" y="458" fill="#91a4bf" font-family="Arial" font-size="11">Generated: {stamp}</text>')
           svg.append('</svg>')
           (p/'repository-intelligence.svg').write_text('\n'.join(svg))
           PY
