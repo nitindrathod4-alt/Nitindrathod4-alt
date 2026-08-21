@@ -1,0 +1,11 @@
+Copyright (c) 2026 Nitin Rathod
+
+ALL RIGHTS RESERVED.
+
+This repository is publicly visible for portfolio, educational, and demonstration purposes only.
+
+No permission is granted to copy, reproduce, modify, redistribute, publish, sublicense, or use the source code or substantial portions of this repository for commercial or derivative purposes without prior written permission from the copyright holder.
+
+The public availability of this repository does not grant an open-source license or any other permission to reuse the source code beyond rights that cannot legally be restricted.
+
+For permission requests, contact the repository owner through the GitHub profile associated with this repository.
