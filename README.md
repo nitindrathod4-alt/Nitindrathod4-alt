@@ -12,6 +12,19 @@
 
 > **Automate what can be automated. Version what can be versioned. Monitor what can fail. Improve everything.**
 
+### 🟢 Live System Status
+<div align="center"><img src="./generated/repository-intelligence.svg" width="100%" alt="Live repository intelligence and system status" /></div>
+
+| Component | Status source | Purpose |
+|---|---|---|
+| 🧠 Repository Intelligence | GitHub API + Actions | Repository activity and health |
+| ⚙️ Automation Pipeline | GitHub Actions | Scheduled data generation |
+| 📊 Dashboard Generation | Generated SVG | Visual status and analysis |
+| 🔎 Engineering Analysis | Analysis Center | Reliability, security and performance review |
+| 🛡️ Quality & Security | Repository workflows | Validation and engineering controls |
+
+> **Status note:** This dashboard reflects repository automation and generated intelligence. It does not claim live AWS/EKS production telemetry unless explicitly connected.
+
 ## 🧰 Engineering Stack
 <div align="center"><img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,jenkins,linux,git,github,bash,java,spring,nodejs,react,mongodb,maven&perline=8" alt="Technology stack" /></div>
 
