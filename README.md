@@ -44,7 +44,6 @@
 ---
 
 ### 🔐 Why This Architecture?
-<div align="center"><img src="./assets/request-response-center.svg" width="100%" alt="Architecture security and flow" /></div>
 
 | Concern | Design | Benefit |
 |---|---|---|
@@ -88,10 +87,36 @@ CODE → GITHUB → CI VALIDATION → BUILD IMAGE → REGISTRY → KUBERNETES �
 | ⚙️ Application | Kubernetes replicas + HPA | Handle API workload |
 | 🗄️ Data | Managed DB + replicas / cache + backups | Reliability & persistence |
 
-### 🎯 Engineering Outcome
-**Separate responsibilities → isolate security boundaries → scale workload tiers → protect persistent data → observe the system → recover quickly.**
+---
 
-> **Architecture note:** This is a deployment-ready target design. It does not claim that a live AWS/EKS production environment is currently connected.
+## ☸️ Kubernetes Operations Center
+<div align="center"><img src="./assets/kubernetes-operations-center.svg" width="100%" alt="Kubernetes operations center" /></div>
+
+**Deploy → Probe → Observe → Scale → Rollout → Rollback**
+
+The operations model covers Deployments, Pods, Services, Ingress, HPA, ConfigMaps, Secrets, health probes, rolling updates and self-healing behavior.
+
+## ☁️ AWS Infrastructure Center
+<div align="center"><img src="./assets/aws-infrastructure-center.svg" width="100%" alt="AWS infrastructure architecture" /></div>
+
+**Route 53 → ALB → VPC → EKS / Compute → Private Data**, with IAM, security groups, network boundaries, encryption, backups and monitoring around the infrastructure.
+
+## 🛡️ DevSecOps Security Center
+<div align="center"><img src="./assets/devsecops-center.svg" width="100%" alt="DevSecOps security pipeline" /></div>
+
+**Code Scan → Dependency Scan → Secret Scan → Container Scan → Secure Deploy**
+
+Security is treated as a pipeline quality gate instead of a final manual check.
+
+## 📊 Observability Center
+<div align="center"><img src="./assets/observability-center.svg" width="100%" alt="DevOps observability dashboard" /></div>
+
+**Observe → Detect → Investigate → Respond** using system health, CPU, memory, request rate, latency, error rate, pod health, logs and alerts.
+
+## 🚨 Incident Response Center
+<div align="center"><img src="./assets/incident-response-center.svg" width="100%" alt="Incident response lifecycle" /></div>
+
+**Alert → Investigate → Root Cause → Fix/Test → Recover → Prevent → Automate → Monitor → Improve**
 
 ---
 
@@ -117,6 +142,11 @@ CODE → GITHUB → CI VALIDATION → BUILD IMAGE → REGISTRY → KUBERNETES �
 <div align="center"><img src="./assets/devsecops-roadmap.svg" width="100%" alt="DevSecOps roadmap" /></div>
 
 ---
+
+## 🎯 Engineering Outcome
+<div align="center"><b>CODE → SECURE → BUILD → DEPLOY → SCALE → OBSERVE → RESPOND → IMPROVE</b></div>
+
+> **Architecture note:** These sections describe a deployment-ready target design. They do not claim that a live AWS/EKS production environment is currently connected.
 
 ## 📈 GitHub Analytics
 <div align="center"><img height="180" src="https://github-readme-stats.vercel.app/api?username=nitindrathod4-alt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" /> <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=nitindrathod4-alt&theme=tokyonight&hide_border=true" /></div>
