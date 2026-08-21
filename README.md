@@ -98,6 +98,7 @@ The repository analytics workflow refreshes machine-readable datasets under `ass
 | `profile-pulse.svg` | Live profile metrics |
 | `live-devops.svg` | DevOps control center |
 | `architecture-pulse.svg` | Cloud delivery visualization |
+| `devops-problem-solving.svg` | Incident-to-improvement lifecycle |
 
 ---
 
@@ -202,19 +203,11 @@ AWS CLOUD → IAM + VPC + S3 → Public / Private Subnets
 
 ---
 
-## 🧠 DevOps Problem-Solving
+## 🧠 DevOps Problem-Solving Lifecycle
 
-```text
-PROBLEM → INVESTIGATE → LOGS / METRICS → ROOT CAUSE
-                                      ↓
-                                  FIX / TEST
-                                      ↓
-                                  AUTOMATE
-                                      ↓
-                                  MONITOR
-                                      ↓
-                                  IMPROVE
-```
+<div align="center">
+  <img src="./assets/devops-problem-solving.svg" width="100%" alt="DevOps Problem-Solving Lifecycle" />
+</div>
 
 ---
 
