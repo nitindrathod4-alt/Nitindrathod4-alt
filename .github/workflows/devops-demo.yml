@@ -1,0 +1,39 @@
+name: DevOps Demo CI
+
+on:
+  push:
+    paths:
+      - 'devops-demo/**'
+      - '.github/workflows/devops-demo.yml'
+  pull_request:
+    paths:
+      - 'devops-demo/**'
+      - '.github/workflows/devops-demo.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Dockerfile
+        run: docker build --check ./devops-demo/docker
+
+      - name: Terraform format
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+
+      - name: Terraform fmt check
+        run: terraform fmt -check -recursive devops-demo/terraform
+
+      - name: Terraform init (no backend)
+        run: terraform -chdir=devops-demo/terraform init -backend=false
+
+      - name: Terraform validate
+        run: terraform -chdir=devops-demo/terraform validate
+
+      - name: Kubernetes manifest sanity check
+        run: grep -q 'kind: Deployment' devops-demo/kubernetes/deployment.yaml && grep -q 'kind: Service' devops-demo/kubernetes/deployment.yaml
