@@ -25,6 +25,125 @@
 
 ---
 
+## 🏗️ 3-Tier Application Architecture
+<div align="center"><img src="./assets/three-tier-architecture.svg" width="100%" alt="Three tier application architecture" /></div>
+
+### 🔍 How the 3-Tier Project Works
+
+```text
+                         👤 USER
+                           │
+                           ▼
+                ┌─────────────────────┐
+                │  TIER 1             │
+                │  PRESENTATION       │
+                │  Frontend / ALB     │
+                └──────────┬──────────┘
+                           │ HTTP/HTTPS
+                           ▼
+                ┌─────────────────────┐
+                │  TIER 2             │
+                │  APPLICATION        │
+                │  API / Backend      │
+                │  Docker + Kubernetes│
+                └──────────┬──────────┘
+                           │ DB Query
+                           ▼
+                ┌─────────────────────┐
+                │  TIER 3             │
+                │  DATA               │
+                │  Database / Storage  │
+                └─────────────────────┘
+```
+
+**Request flow:** User → Load Balancer/Ingress → Frontend → Backend API → Database → Response.
+
+**Why 3-tier?** Each layer has a separate responsibility, can be secured independently, and can scale independently. The application tier can scale horizontally without exposing the database directly to the public network.
+
+### 🔐 Security Flow
+
+```text
+PUBLIC INTERNET
+      │
+      ▼
+  ALB / INGRESS
+      │
+      ▼
+┌──────────────┐
+│ PUBLIC TIER  │  ← Frontend
+└──────┬───────┘
+       │ private network
+       ▼
+┌──────────────┐
+│ PRIVATE TIER │  ← API / Backend
+└──────┬───────┘
+       │ private DB access
+       ▼
+┌──────────────┐
+│ DATA TIER    │  ← Database
+└──────────────┘
+```
+
+### 📈 Scaling Strategy
+
+| Layer | Scaling Strategy | Main Goal |
+|---|---|---|
+| Presentation | Load balancing + replicas | Handle user traffic |
+| Application | Kubernetes HPA + replicas | Handle API workload |
+| Data | Managed DB / read replicas / backups | Reliability & persistence |
+
+---
+
+## 🔄 End-to-End Delivery of the 3-Tier App
+
+```text
+DEVELOPER
+   │
+   ▼
+GITHUB
+   │
+   ▼
+CI VALIDATION
+   │
+   ├── ShellCheck
+   ├── Docker validation
+   ├── Terraform validation
+   └── Kubernetes validation
+   │
+   ▼
+DOCKER BUILD
+   │
+   ▼
+IMAGE REGISTRY
+   │
+   ▼
+KUBERNETES
+   │
+   ├── Frontend Deployment
+   ├── Backend Deployment
+   └── Services
+   │
+   ▼
+DATABASE
+   │
+   ▼
+MONITORING / LOGS / ALERTS
+```
+
+## 🧩 Production Engineering Concepts
+
+- **High Availability:** multiple application replicas behind a load balancer.
+- **Fault Isolation:** frontend, backend and data layers are separated.
+- **Zero-downtime direction:** rolling deployments can replace pods gradually.
+- **Observability:** logs, metrics and health checks identify failures.
+- **Infrastructure as Code:** Terraform keeps infrastructure reproducible.
+- **Containerization:** Docker packages applications consistently.
+- **Orchestration:** Kubernetes handles scheduling, service discovery and scaling.
+
+> **Important:** The diagrams describe the target architecture and deployment workflow. Cloud resources are not claimed as live until an actual AWS environment is connected and deployed.
+
+---
+
 ## 🏗️ Enterprise Architecture
 <div align="center"><img src="./assets/enterprise-architecture.svg" width="100%" alt="Enterprise architecture" /></div>
 
