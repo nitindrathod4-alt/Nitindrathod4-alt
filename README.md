@@ -2,6 +2,8 @@
 <img src="./github-banner.png" width="100%" alt="DevOps profile banner" />
 </div>
 
+<div align="center"><h1>👨‍💻 Cloud & DevOps Engineer</h1><p><b>AWS • Kubernetes • Docker • Terraform • CI/CD • Linux • Automation</b></p></div>
+
 <div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&pause=900&color=00BFFF&center=true&vCenter=true&width=850&lines=Cloud+%26+DevOps;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Automation;BUILD+%E2%80%A2+DEPLOY+%E2%80%A2+OBSERVE+%E2%80%A2+IMPROVE" /></div>
 <p align="center"><a href="./docs/index.html"><img src="https://img.shields.io/badge/%F0%9F%9A%80%20OPEN%20DEVOPS%20DASHBOARD-0b1728?style=for-the-badge&logo=github&logoColor=white" /></a> <img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" /> <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" /> <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" /></p>
 
