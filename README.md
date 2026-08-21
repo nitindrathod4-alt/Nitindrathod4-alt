@@ -5,7 +5,7 @@
 <div align="center"><h1>👨‍💻 Cloud & DevOps Engineer</h1><p><b>AWS • Kubernetes • Docker • Terraform • CI/CD • Linux • Automation</b></p></div>
 
 <div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&pause=900&color=00BFFF&center=true&vCenter=true&width=850&lines=Cloud+%26+DevOps;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Automation;BUILD+%E2%80%A2+DEPLOY+%E2%80%A2+OBSERVE+%E2%80%A2+IMPROVE" /></div>
-<p align="center"><a href="https://nitindrathod4-alt.github.io/Nitindrathod4-alt/"><img src="https://img.shields.io/badge/%F0%9F%9A%80%20OPEN%20DEVOPS%20DASHBOARD-0b1728?style=for-the-badge&logo=github&logoColor=white" /></a> <img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" /> <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" /> <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" /></p>
+<p align="center"><a href="https://nitindrathod4-alt.github.io/Nitindrathod4-alt/"><img src="https://img.shields.io/badge/%F0%9F%9A%80%20OPEN%20DEVOPS%20DASHBOARD-0b1728?style=for-the-badge&logo=github&logoColor=white" /></a> <img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" /> <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" /></p>
 
 ## 🎛️ DevOps Engineering Dashboard
 <div align="center"><img src="./assets/premium-devops-dashboard.svg" width="100%" alt="Premium DevOps engineering dashboard" /></div>
@@ -106,12 +106,12 @@ Terraform → fmt → validate → plan → review → apply → AWS → drift c
 | Kubernetes Operations | Deployments + probes + scaling + rollback |
 | DevSecOps | Security checks + controlled delivery |
 
-## 📊 GitHub Analytics
-<div align="center"><img height="180" src="https://github-readme-stats.vercel.app/api?username=nitindrathod4-alt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" /> <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=nitindrathod4-alt&theme=tokyonight&hide_border=true" /></div>
-<div align="center"><img src="https://github-readme-activity-graph.vercel.app/graph?username=nitindrathod4-alt&theme=tokyo-night&hide_border=true&area=true" width="100%" /></div>
-
-## 🏆 GitHub Trophy Wall
-<div align="center"><img src="https://github-profile-trophy.vercel.app/?username=nitindrathod4-alt&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=6" /></div>
+## 📊 GitHub Profile
+<div align="center">
+<img src="https://img.shields.io/badge/GitHub-Cloud%20%26%20DevOps%20Engineering-181717?style=for-the-badge&logo=github" />
+<img src="https://img.shields.io/badge/Focus-Automation%20%26%20Reliability-0b7285?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Delivery-CI%2FCD-6f42c1?style=for-the-badge" />
+</div>
 
 ---
 
