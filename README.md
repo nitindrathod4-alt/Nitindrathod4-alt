@@ -2,356 +2,529 @@
   <img src="./github-banner.png" width="100%" alt="Nitin Rathod - DevOps & Cloud Engineer" />
 </div>
 
-<h1 align="center">👋 Hi, I'm Nitin Rathod</h1>
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00BFFF&center=true&vCenter=true&width=800&lines=DevOps+%26+Cloud+Engineer;AWS+%7C+Kubernetes+%7C+Docker+%7C+Terraform;CI%2FCD+%7C+Linux+%7C+Cloud+Automation;Build+%E2%80%A2+Automate+%E2%80%A2+Deploy+%E2%80%A2+Scale" />
+</div>
 
 <p align="center">
-  <b>DevOps & Cloud Engineer</b><br>
-  AWS • Kubernetes • Docker • Terraform • Jenkins • Linux • CI/CD
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=Profile%20Views&color=0e75b6&style=flat" />
-  <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=Followers&style=flat" />
-  <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=Stars&style=flat" />
-</p>
-
-<p align="center">
-  <a href="mailto:nitindrathod4@gmail.com"><img src="https://img.shields.io/badge/Email-nitindrathod4%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://github.com/nitindrathod4-alt"><img src="https://img.shields.io/badge/GitHub-nitindrathod4--alt-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <img src="https://komarev.com/ghpvc/?username=nitindrathod4-alt&label=PROFILE%20VIEWS&color=0e75b6&style=for-the-badge" />
+  <img src="https://img.shields.io/github/followers/nitindrathod4-alt?label=FOLLOWERS&style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/nitindrathod4-alt?label=STARS&style=for-the-badge" />
 </p>
 
 ---
 
-## 🚀 About Me
+# 👨‍💻 Nitin Rathod
 
-I'm a **DevOps & Cloud Engineer** focused on building automated, scalable and reliable infrastructure. I work across cloud infrastructure, containerization, CI/CD, Infrastructure as Code and Kubernetes deployments.
+<div align="center">
+  <h2>DevOps & Cloud Engineer</h2>
+  <p><b>Cloud Infrastructure • CI/CD • Containers • Kubernetes • Infrastructure as Code • Automation</b></p>
+</div>
 
-I enjoy taking applications from **source code → automated build → container → cloud infrastructure → production deployment**.
+## 🚀 Professional Profile
 
-### 🎯 What I Do
+I am a **DevOps & Cloud Engineer** focused on building reliable, automated and scalable infrastructure. My work revolves around connecting development and operations through modern cloud-native practices.
 
-- ☁️ Design and manage AWS cloud infrastructure
-- 🔄 Build automated CI/CD pipelines
-- 🐳 Containerize applications with Docker
-- ☸️ Deploy and manage workloads on Kubernetes / Amazon EKS
-- 🏗️ Provision infrastructure using Terraform
-- 🐧 Automate Linux administration and operational tasks
-- 🔐 Apply DevSecOps and security practices
-- 📊 Explore monitoring, logging and observability
+I enjoy designing workflows that move applications from **code to production** with automation, repeatability, security and observability at every stage.
+
+### 💡 My Engineering Philosophy
+
+> **Automate everything that can be automated. Build infrastructure that can be repeated. Deploy with confidence.**
 
 ---
 
-## 🧰 Tech Stack & Tools
+## ⚡ Core Expertise
 
-### ☁️ Cloud & Infrastructure
+<div align="center">
 
-<p>
-<img src="https://skillicons.dev/icons?i=aws,terraform" />
+| ☁️ Cloud | 🔄 Automation | ☸️ Containers | 🏗️ Infrastructure |
+|---|---|---|---|
+| AWS | Jenkins | Docker | Terraform |
+| EC2 | CI/CD | Kubernetes | IAM |
+| VPC | GitHub | Amazon EKS | S3 |
+| ALB | Maven | DockerHub | CloudWatch |
+
+</div>
+
+---
+
+## 🧰 Complete Tech Stack
+
+### ☁️ AWS / Cloud
+
+<p align="center">
+<img src="https://skillicons.dev/icons?i=aws" />
 </p>
 
-**AWS:** EC2 • VPC • IAM • S3 • ALB • Auto Scaling • EKS • CloudWatch
+**EC2 • VPC • IAM • S3 • ALB • EKS • CloudWatch • Auto Scaling • Security Groups • Subnets • Load Balancing**
 
-### 🐳 Containers & Orchestration
+### 🐳 Containers & Kubernetes
 
-<p>
+<p align="center">
 <img src="https://skillicons.dev/icons?i=docker,kubernetes" />
 </p>
 
-Docker • DockerHub • Kubernetes • Amazon EKS • Services • Deployments • ConfigMaps • Secrets
+**Docker • DockerHub • Kubernetes • Amazon EKS • Pods • Deployments • Services • ConfigMaps • Secrets • Namespaces • Health Checks**
 
-### 🔄 CI/CD & Automation
+### 🏗️ Infrastructure as Code
 
-<p>
-<img src="https://skillicons.dev/icons?i=jenkins,github,git,bash" />
+<p align="center">
+<img src="https://skillicons.dev/icons?i=terraform" />
 </p>
 
-Jenkins • GitHub • Git • Bash • Maven • CI/CD Automation
+**Terraform • AWS Provider • IAM Roles • VPC • EC2 • EKS • Variables • Outputs • State Management • Reusable Infrastructure**
 
-### 💻 Development & Databases
+### 🔄 CI/CD & DevOps
 
-<p>
+<p align="center">
+<img src="https://skillicons.dev/icons?i=jenkins,git,github,bash" />
+</p>
+
+**Jenkins • Git • GitHub • Maven • Bash • CI/CD • Build Automation • Release Automation • Deployment Automation**
+
+### 💻 Development
+
+<p align="center">
 <img src="https://skillicons.dev/icons?i=java,spring,nodejs,react,mongodb" />
 </p>
 
-Java • Spring Boot • Node.js • React • MongoDB • REST APIs
+**Java • Spring Boot • Node.js • React • MongoDB • REST APIs • Maven**
 
-### 🐧 Operating Systems & Quality
+### 🐧 Linux & Operations
 
-Linux • Ubuntu • Shell Scripting • SonarQube • DevSecOps
+**Ubuntu • Linux Administration • Shell Scripting • SSH • Process Management • Networking • Logs • Troubleshooting**
 
 ---
 
-## 🏗️ DevOps Architecture
+## 🏗️ Enterprise DevOps Architecture
 
 ```text
-                         👨‍💻 Developer
-                              │
-                              ▼
-                         🔀 GitHub
-                              │
-                              ▼
-                       🔄 Jenkins CI/CD
-                              │
-                    ┌─────────┴─────────┐
-                    ▼                   ▼
-                 🧪 Build           🔍 Quality
-                Maven              SonarQube
-                    │                   │
-                    └─────────┬─────────┘
-                              ▼
-                         🐳 Docker
-                              │
-                              ▼
-                         ☁️ AWS Cloud
-                              │
-                    ┌─────────┴─────────┐
-                    ▼                   ▼
-                   EC2                 EKS
-                    │                   │
-                    │              ☸️ Kubernetes
-                    │                   │
-                    └─────────┬─────────┘
-                              ▼
-                         🌐 Production
+                              👨‍💻 DEVELOPER
+                                   │
+                                   ▼
+                              🔀 GITHUB
+                                   │
+                                   ▼
+                         🔄 JENKINS CI/CD
+                                   │
+                   ┌───────────────┼───────────────┐
+                   ▼               ▼               ▼
+                🧪 BUILD       🔍 QUALITY       🔐 SECURITY
+                Maven         SonarQube         DevSecOps
+                   │               │               │
+                   └───────────────┼───────────────┘
+                                   ▼
+                              🐳 DOCKER
+                                   │
+                                   ▼
+                             📦 DOCKERHUB
+                                   │
+                                   ▼
+                              ☁️ AWS CLOUD
+                                   │
+                    ┌──────────────┴──────────────┐
+                    ▼                             ▼
+                  EC2                           EKS
+                    │                             │
+                    │                      ☸️ KUBERNETES
+                    │                             │
+                    │                    ┌────────┴────────┐
+                    │                    ▼                 ▼
+                    │                 SERVICES          PODS
+                    │                    │                 │
+                    └────────────────────┴────────┬────────┘
+                                                  ▼
+                                           🌐 PRODUCTION
+                                                  │
+                                                  ▼
+                                         📊 MONITORING
 ```
 
 ---
 
-## 🔄 CI/CD Pipeline
+## 🔄 End-to-End CI/CD Pipeline
 
 ```text
-Code
-  ↓
-Git Push
-  ↓
-GitHub
-  ↓
-Jenkins
-  ↓
+SOURCE CODE
+    │
+    ▼
+GitHub Repository
+    │
+    ▼
+Jenkins Trigger
+    │
+    ▼
+Checkout
+    │
+    ▼
 Maven Build
-  ↓
+    │
+    ▼
+Unit / Quality Checks
+    │
+    ▼
 SonarQube Analysis
-  ↓
+    │
+    ▼
 Docker Build
-  ↓
-DockerHub
-  ↓
-AWS / Kubernetes
-  ↓
-Deployment
-  ↓
-Monitoring
+    │
+    ▼
+Docker Image
+    │
+    ▼
+DockerHub Registry
+    │
+    ▼
+AWS / EKS
+    │
+    ▼
+Kubernetes Deployment
+    │
+    ▼
+Service / LoadBalancer
+    │
+    ▼
+PRODUCTION 🚀
 ```
 
 ---
 
-## ☁️ AWS Skills
+## ☁️ AWS Architecture
 
-| AWS Service | Practical Focus |
+```text
+                         AWS CLOUD
+                            │
+              ┌─────────────┼─────────────┐
+              │             │             │
+              ▼             ▼             ▼
+             IAM           VPC            S3
+              │             │             │
+              │      ┌──────┴──────┐      │
+              │      ▼             ▼      │
+              │   Public         Private  │
+              │   Subnet         Subnet   │
+              │      │             │      │
+              │     ALB           EC2     │
+              │                    │      │
+              │                    ▼      │
+              │                   EKS     │
+              │                    │      │
+              └────────────────────┼──────┘
+                                   ▼
+                              CloudWatch
+```
+
+---
+
+## ☸️ Kubernetes Production Concepts
+
+| Concept | Focus |
 |---|---|
-| EC2 | Application hosting & Linux servers |
-| VPC | Networking, subnets & security |
-| IAM | Users, roles & least privilege |
-| S3 | Object storage & application artifacts |
-| ALB | Load balancing & application traffic |
-| EKS | Managed Kubernetes |
-| CloudWatch | Monitoring & logs |
-| Auto Scaling | Scalable infrastructure |
+| Pods | Application workloads |
+| Deployments | Replica and rollout management |
+| Services | Internal and external networking |
+| ConfigMaps | Configuration management |
+| Secrets | Sensitive configuration |
+| Namespaces | Resource isolation |
+| EKS | Managed Kubernetes on AWS |
+| LoadBalancer | External application access |
+| Health Checks | Reliability and availability |
+| Troubleshooting | CrashLoopBackOff / ImagePullBackOff |
 
 ---
 
-## ☸️ Kubernetes & EKS
-
-- Pods & Deployments
-- Services & LoadBalancers
-- ConfigMaps & Secrets
-- Namespaces
-- Node management
-- Health checks
-- Container troubleshooting
-- ImagePullBackOff / CrashLoopBackOff troubleshooting
-- Amazon EKS cluster management
-- Kubernetes networking fundamentals
-
----
-
-## 🏗️ Terraform / Infrastructure as Code
+## 🏗️ Terraform Workflow
 
 ```text
-Terraform
-   ↓
-AWS Provider
-   ↓
-IAM + VPC + EC2
-   ↓
-EKS Infrastructure
-   ↓
-Repeatable Cloud Environment
-```
-
-**Focus:** reusable infrastructure, variables, providers, resources, IAM roles, networking and scalable AWS environments.
-
----
-
-## 🚀 Featured Projects
-
-### ☸️ Cloud-Native Kubernetes Deployment
-
-**Stack:** AWS • EKS • Kubernetes • Docker • LoadBalancer
-
-Designed a cloud-native deployment workflow for containerized applications with Kubernetes orchestration and AWS infrastructure.
-
-### 🏗️ AWS Infrastructure Automation
-
-**Stack:** Terraform • AWS • IAM • EC2 • VPC • EKS
-
-Infrastructure-as-Code approach for provisioning repeatable AWS environments and reducing manual configuration.
-
-### 🔄 End-to-End CI/CD Automation
-
-**Stack:** Jenkins • GitHub • Maven • Docker • DockerHub • AWS
-
-Automated source-to-deployment workflow covering code checkout, application build, quality checks, container image creation and delivery.
-
-### 🏥 Hospital DevOps Platform
-
-**Stack:** Docker • AWS • MongoDB • Kubernetes
-
-Full-stack application deployment with containerized services, cloud infrastructure and Kubernetes orchestration.
-
-### 🤖 AI Interview Platform
-
-**Stack:** Docker • AWS • CI/CD • Cloud
-
-Cloud-oriented application deployment focused on automation, containerization and reliable delivery.
-
----
-
-## 📚 DevOps Learning Journey
-
-```text
-🐧 Linux
-   ↓
-🔀 Git & GitHub
-   ↓
-🐳 Docker
-   ↓
-🔄 Jenkins / CI-CD
-   ↓
-☁️ AWS
-   ↓
-🏗️ Terraform
-   ↓
-☸️ Kubernetes
-   ↓
-🚀 Amazon EKS
-   ↓
-🔐 DevSecOps
-   ↓
-📊 Monitoring & Observability
-   ↓
-🏆 Production-Grade DevOps
+Terraform Code
+      ↓
+Provider Configuration
+      ↓
+Variables / Resources
+      ↓
+terraform init
+      ↓
+terraform plan
+      ↓
+terraform apply
+      ↓
+AWS Infrastructure
+      ↓
+Repeatable Environment
 ```
 
 ---
 
-## 🎯 Currently Learning
+## 🚀 Featured DevOps Projects
 
-- ☁️ Advanced AWS Architecture
-- ☸️ Kubernetes & Amazon EKS
-- 🏗️ Terraform Advanced Concepts
-- 🔐 DevSecOps
-- 📊 Monitoring & Observability
-- 🔄 GitOps
-- 🌐 Cloud Networking
-- ⚙️ Platform Engineering
+### ☸️ 01 — Cloud-Native Kubernetes Platform
+
+**AWS • EKS • Kubernetes • Docker • LoadBalancer**
+
+Containerized application deployment with Kubernetes orchestration, AWS infrastructure and production-style service exposure.
+
+### 🏗️ 02 — AWS Infrastructure Automation
+
+**Terraform • AWS • IAM • VPC • EC2 • EKS**
+
+Infrastructure-as-Code workflow for repeatable cloud environments and automated provisioning.
+
+### 🔄 03 — Automated CI/CD Platform
+
+**Jenkins • GitHub • Maven • Docker • DockerHub • AWS**
+
+End-to-end delivery workflow covering source checkout, application build, quality analysis, image creation and deployment.
+
+### 🏥 04 — Hospital DevOps Platform
+
+**Docker • AWS • MongoDB • Kubernetes**
+
+Full-stack application deployment using containers, cloud infrastructure and Kubernetes orchestration.
+
+### 🤖 05 — AI Interview Platform
+
+**Docker • AWS • CI/CD • Cloud**
+
+Cloud-based application deployment focused on containerization, automation and reliable delivery.
+
+### 💳 06 — NovaPay Banking Platform
+
+**Docker • Jenkins • AWS • CI/CD**
+
+DevOps-focused application delivery workflow with automated builds and cloud deployment practices.
+
+---
+
+## 🧠 DevOps Problem-Solving
+
+```text
+                     PROBLEM
+                        │
+                        ▼
+                   INVESTIGATE
+                        │
+                        ▼
+                    LOGS / METRICS
+                        │
+                        ▼
+                    FIND ROOT CAUSE
+                        │
+                        ▼
+                     FIX / TEST
+                        │
+                        ▼
+                    AUTOMATE FIX
+                        │
+                        ▼
+                    MONITOR RESULT
+                        │
+                        ▼
+                   DOCUMENT / IMPROVE
+```
+
+---
+
+## 🔐 DevSecOps Mindset
+
+- 🔑 IAM & least-privilege access
+- 🔒 Secure secrets management
+- 🔍 Static code analysis
+- 🐳 Secure container practices
+- ☸️ Kubernetes security fundamentals
+- 🛡️ Cloud security awareness
+- 📋 Automated quality gates
 
 ---
 
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=nitindrathod4-alt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" />
-  <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=nitindrathod4-alt&theme=tokyonight&hide_border=true" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=nitindrathod4-alt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" />
+<img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=nitindrathod4-alt&theme=tokyonight&hide_border=true" />
 </div>
 
 <br>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nitindrathod4-alt&layout=compact&theme=tokyonight&hide_border=true" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nitindrathod4-alt&layout=compact&theme=tokyonight&hide_border=true" />
 </div>
 
 ---
 
-## 🏆 GitHub Achievements
+## 🏆 GitHub Trophy Wall
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=nitindrathod4-alt&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6" />
+<img src="https://github-profile-trophy.vercel.app/?username=nitindrathod4-alt&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=6" />
 </div>
 
 ---
 
-## 📈 Contribution Activity
+## 📈 Contribution Graph
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nitindrathod4-alt&theme=tokyo-night&hide_border=true" width="100%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=nitindrathod4-alt&theme=tokyo-night&hide_border=true&area=true" width="100%" />
+</div>
+
+---
+
+## 🗺️ DevOps Roadmap
+
+```text
+                    DEVOPS ENGINEER
+                           │
+         ┌─────────────────┼─────────────────┐
+         ▼                 ▼                 ▼
+       LINUX             CLOUD           AUTOMATION
+         │                 │                 │
+         ▼                 ▼                 ▼
+        GIT               AWS             JENKINS
+         │                 │                 │
+         └──────────┬──────┴──────┬──────────┘
+                    ▼             ▼
+                 DOCKER       TERRAFORM
+                    │             │
+                    └──────┬──────┘
+                           ▼
+                      KUBERNETES
+                           │
+                           ▼
+                          EKS
+                           │
+                           ▼
+                       DEVSECOPS
+                           │
+                           ▼
+                    OBSERVABILITY
+                           │
+                           ▼
+                  CLOUD ARCHITECTURE
+```
+
+---
+
+## 🎯 Current Goals
+
+- [x] Git & GitHub
+- [x] Linux fundamentals
+- [x] Docker
+- [x] AWS fundamentals
+- [x] Jenkins / CI/CD
+- [x] Kubernetes fundamentals
+- [x] Terraform fundamentals
+- [ ] Advanced Kubernetes
+- [ ] Advanced Terraform
+- [ ] DevSecOps
+- [ ] Cloud Architecture
+- [ ] Advanced Observability
+- [ ] Production-grade Platform Engineering
+- [ ] Open Source Contributions
+
+---
+
+## 📚 Learning Focus
+
+<div align="center">
+
+**AWS** → **Terraform** → **Docker** → **Kubernetes** → **EKS** → **CI/CD** → **DevSecOps** → **Observability**
+
 </div>
 
 ---
 
 ## 🧩 Areas I'm Exploring
 
-| Area | Focus |
+| 🔥 Area | 🚀 Focus |
 |---|---|
-| ☁️ Cloud Architecture | Scalable AWS infrastructure |
-| 🔐 Cloud Security | IAM, security practices & DevSecOps |
-| ☸️ Kubernetes | Production workloads & EKS |
-| 🏗️ IaC | Terraform automation |
-| 🔄 GitOps | Automated infrastructure delivery |
-| 📊 Observability | Metrics, logs & monitoring |
-| ⚙️ Automation | Reducing repetitive operational work |
-| 🚀 Platform Engineering | Developer-focused infrastructure |
+| Cloud Architecture | Highly available and scalable systems |
+| Kubernetes | Production workloads and cluster operations |
+| DevSecOps | Security integrated into delivery |
+| GitOps | Declarative application delivery |
+| Observability | Metrics, logs and traces |
+| Automation | Infrastructure and deployment automation |
+| Platform Engineering | Developer self-service infrastructure |
+| Cloud Networking | Secure and reliable connectivity |
 
 ---
 
-## 📌 DevOps Mindset
+## 💻 Tools I Work With
+
+<div align="center">
+<img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,jenkins,linux,git,github,bash,java,spring,nodejs,react,mongodb,maven" />
+</div>
+
+---
+
+## 🧪 DevOps Troubleshooting Checklist
 
 ```text
-Learn
-  ↓
-Build
-  ↓
-Break
-  ↓
-Debug
-  ↓
-Automate
-  ↓
-Monitor
-  ↓
-Improve
-  ↓
-Repeat 🔁
+☑ Check Pod Status
+☑ Check Logs
+☑ Describe Resource
+☑ Verify Image
+☑ Verify Environment Variables
+☑ Verify Networking
+☑ Verify IAM Permissions
+☑ Verify Security Groups
+☑ Verify Service / Endpoints
+☑ Verify Deployment
+☑ Identify Root Cause
+☑ Apply Fix
+☑ Monitor
 ```
 
-> **The goal isn't to know every tool. The goal is to know how to solve problems.**
+---
+
+## 📌 Engineering Principles
+
+**Automation First** • **Infrastructure as Code** • **Security by Design** • **Observability** • **Repeatability** • **Reliability** • **Continuous Improvement**
+
+---
+
+## 🏅 Professional Focus
+
+```text
+Cloud Engineering
+      +
+DevOps Automation
+      +
+Infrastructure as Code
+      +
+Container Orchestration
+      +
+CI/CD
+      +
+Security
+      +
+Observability
+      =
+Modern Cloud-Native Engineering 🚀
+```
 
 ---
 
 ## 📫 Let's Connect
 
 <div align="center">
-  <a href="mailto:nitindrathod4@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://github.com/nitindrathod4-alt">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
+<a href="mailto:nitindrathod4@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://github.com/nitindrathod4-alt"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
 </div>
 
 <br>
 
 <div align="center">
-  <h3>⚡ Learn • Build • Automate • Deploy • Scale ⚡</h3>
-  <p><b>Thanks for visiting my GitHub profile! 🚀</b></p>
+
+### ⚡ LEARN • BUILD • AUTOMATE • DEPLOY • SCALE ⚡
+
+**Thanks for visiting my GitHub profile!** 🚀
+
+</div>
+
+---
+
+<div align="center">
+  <img src="./github-banner.png" width="100%" alt="DevOps Banner" />
+</div>
+
+<div align="center">
+  <b>👨‍💻 Nitin Rathod | DevOps & Cloud Engineer</b>
 </div>
