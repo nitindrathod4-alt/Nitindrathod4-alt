@@ -28,37 +28,134 @@
 ## 🏗️ 3-Tier Application Architecture
 <div align="center"><img src="./assets/three-tier-architecture.svg" width="100%" alt="Three tier application architecture" /></div>
 
-### 🔍 How the 3-Tier Project Works
+### 🔍 How It Works — Request to Response
+
+**1️⃣ User Request** → A user opens the application and sends an HTTPS request.
+
+**2️⃣ Entry Layer** → DNS/load balancer or ingress receives the request and routes it to the presentation tier. The public edge is the only layer exposed to users.
+
+**3️⃣ Presentation Tier** → The frontend serves the UI. Static assets are delivered to the browser while API requests are forwarded to the backend service.
+
+**4️⃣ Application Tier** → The backend API runs inside containers managed by Kubernetes. It authenticates requests, executes business logic and communicates with internal services.
+
+**5️⃣ Data Tier** → The backend reaches the database through private connectivity. The database is not directly exposed to the internet.
+
+**6️⃣ Response** → Database result → Backend API → Frontend → User.
 
 ```text
-                         👤 USER
-                           │
-                           ▼
-                ┌─────────────────────┐
-                │  TIER 1             │
-                │  PRESENTATION       │
-                │  Frontend / ALB     │
-                └──────────┬──────────┘
-                           │ HTTP/HTTPS
-                           ▼
-                ┌─────────────────────┐
-                │  TIER 2             │
-                │  APPLICATION        │
-                │  API / Backend      │
-                │  Docker + Kubernetes│
-                └──────────┬──────────┘
-                           │ DB Query
-                           ▼
-                ┌─────────────────────┐
-                │  TIER 3             │
-                │  DATA               │
-                │  Database / Storage  │
-                └─────────────────────┘
+USER
+  │
+  │ HTTPS
+  ▼
+┌──────────────────────┐
+│ DNS / ALB / INGRESS  │  ← Public Edge
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│ PRESENTATION TIER    │  ← Frontend
+│ HTML / JS / UI       │
+└──────────┬───────────┘
+           │ API Request
+           ▼
+┌──────────────────────┐
+│ APPLICATION TIER     │  ← Backend
+│ Docker + Kubernetes  │
+│ Auth + Business Logic│
+└──────────┬───────────┘
+           │ Private DB Query
+           ▼
+┌──────────────────────┐
+│ DATA TIER            │  ← Database
+│ Persistent Storage   │
+└──────────┬───────────┘
+           │
+           ▼
+       DB Response
+           │
+           ▼
+      USER RESPONSE
 ```
 
-**Request flow:** User → Load Balancer/Ingress → Frontend → Backend API → Database → Response.
+### 🔐 Why This Architecture?
 
-**Why 3-tier?** Each layer has a separate responsibility, can be secured independently, and can scale independently. The application tier can scale horizontally without exposing the database directly to the public network.
+| Concern | Design |
+|---|---|
+| Security | Public edge separated from private application/data layers |
+| Scalability | Frontend and backend can scale independently |
+| Availability | Multiple application replicas can run behind a load balancer |
+| Maintainability | UI, API and data responsibilities remain separated |
+| Deployment | Each tier can be versioned and released independently |
+| Recovery | Persistent data can use backups and recovery strategies |
+
+### 📈 What Happens When Traffic Increases?
+
+```text
+NORMAL TRAFFIC
+Frontend ×2  →  Backend ×2  →  Database
+
+             TRAFFIC SPIKE
+                  │
+                  ▼
+        Load Balancer distributes
+                  │
+        ┌─────────┼─────────┐
+        ▼         ▼         ▼
+     Backend   Backend   Backend
+       Pod       Pod       Pod
+        │         │         │
+        └─────────┼─────────┘
+                  ▼
+               Database
+```
+
+With Kubernetes, the application tier can increase replicas based on workload. The database remains protected behind private access and should be scaled using an appropriate managed-database strategy rather than simply adding application pods.
+
+### 🩺 Failure Scenario
+
+```text
+Frontend healthy
+      │
+      ▼
+Backend Pod #1 ❌
+Backend Pod #2 ✅  ─────→ Request continues
+Backend Pod #3 ✅
+      │
+      ▼
+Database ✅
+```
+
+If one backend pod fails, Kubernetes can remove the unhealthy pod from service and maintain traffic through healthy replicas. Health checks, logs and metrics then help identify the root cause.
+
+### 🔄 Complete Engineering Lifecycle
+
+```text
+CODE
+ ↓
+GITHUB
+ ↓
+CI VALIDATION
+ ├─ ShellCheck
+ ├─ Docker validation
+ ├─ Terraform validation
+ └─ Kubernetes validation
+ ↓
+BUILD IMAGE
+ ↓
+IMAGE REGISTRY
+ ↓
+DEPLOY TO KUBERNETES
+ ↓
+HEALTH CHECKS
+ ↓
+LOGS + METRICS
+ ↓
+ALERT
+ ↓
+INVESTIGATE → FIX → TEST → DEPLOY AGAIN
+```
+
+> **Important:** This section documents the target architecture and engineering workflow. It does not claim that a live AWS/EKS production environment is currently connected.
 
 ### 🔐 Security Flow
 
@@ -91,56 +188,6 @@ PUBLIC INTERNET
 | Presentation | Load balancing + replicas | Handle user traffic |
 | Application | Kubernetes HPA + replicas | Handle API workload |
 | Data | Managed DB / read replicas / backups | Reliability & persistence |
-
----
-
-## 🔄 End-to-End Delivery of the 3-Tier App
-
-```text
-DEVELOPER
-   │
-   ▼
-GITHUB
-   │
-   ▼
-CI VALIDATION
-   │
-   ├── ShellCheck
-   ├── Docker validation
-   ├── Terraform validation
-   └── Kubernetes validation
-   │
-   ▼
-DOCKER BUILD
-   │
-   ▼
-IMAGE REGISTRY
-   │
-   ▼
-KUBERNETES
-   │
-   ├── Frontend Deployment
-   ├── Backend Deployment
-   └── Services
-   │
-   ▼
-DATABASE
-   │
-   ▼
-MONITORING / LOGS / ALERTS
-```
-
-## 🧩 Production Engineering Concepts
-
-- **High Availability:** multiple application replicas behind a load balancer.
-- **Fault Isolation:** frontend, backend and data layers are separated.
-- **Zero-downtime direction:** rolling deployments can replace pods gradually.
-- **Observability:** logs, metrics and health checks identify failures.
-- **Infrastructure as Code:** Terraform keeps infrastructure reproducible.
-- **Containerization:** Docker packages applications consistently.
-- **Orchestration:** Kubernetes handles scheduling, service discovery and scaling.
-
-> **Important:** The diagrams describe the target architecture and deployment workflow. Cloud resources are not claimed as live until an actual AWS environment is connected and deployed.
 
 ---
 
