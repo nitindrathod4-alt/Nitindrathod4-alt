@@ -1,0 +1,104 @@
+name: Live Engineering Dashboard
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '27 * * * *'
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  live-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Collect latest workflow status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir -p generated
+          gh workflow list --json name,path,state > generated/workflows.json
+          python - <<'PY'
+          import json, subprocess
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          wanted = {
+              'devops-validation.yml': 'CI/CD Validation',
+              'engineering-quality.yml': 'Engineering Quality',
+              'quality-gate.yml': 'Quality Gate',
+              'security-baseline.yml': 'Security Baseline',
+              'repository-intelligence.yml': 'Repository Intelligence',
+              'repository-analytics.yml': 'Repository Analytics',
+              'terraform-kubernetes-validation.yml': 'Terraform / Kubernetes',
+          }
+          repo = __import__('os').environ['REPO']
+          workflows = json.loads(Path('generated/workflows.json').read_text())
+          out = []
+          for path, label in wanted.items():
+              matches = [w for w in workflows if w.get('path','').endswith(path)]
+              if not matches:
+                  out.append({'label': label, 'workflow': path, 'status': 'NOT FOUND', 'conclusion': None, 'updated_at': None})
+                  continue
+              wf = matches[0]
+              url = f"repos/{repo}/actions/workflows/{path}/runs?per_page=1"
+              raw = subprocess.check_output(['gh','api',url], text=True)
+              runs = json.loads(raw).get('workflow_runs', [])
+              if not runs:
+                  out.append({'label': label, 'workflow': path, 'status': 'NO RUN', 'conclusion': None, 'updated_at': None})
+                  continue
+              r = runs[0]
+              conclusion = r.get('conclusion')
+              status = r.get('status','unknown')
+              if status == 'completed':
+                  display = 'PASSING' if conclusion == 'success' else ('FAILED' if conclusion else 'COMPLETED')
+              else:
+                  display = status.upper()
+              out.append({'label': label, 'workflow': path, 'status': display, 'conclusion': conclusion, 'updated_at': r.get('updated_at'), 'run_id': r.get('id')})
+
+          healthy = sum(1 for x in out if x['status'] == 'PASSING')
+          attention = sum(1 for x in out if x['status'] in {'FAILED','CANCELLED','TIMED_OUT'})
+          summary = {
+              'generated_at': datetime.now(timezone.utc).isoformat(),
+              'repository': repo,
+              'checks': out,
+              'passing': healthy,
+              'attention': attention,
+              'total': len(out),
+              'overall': 'HEALTHY' if attention == 0 and healthy > 0 else ('ATTENTION' if attention else 'WAITING')
+          }
+          Path('generated/live-status.json').write_text(json.dumps(summary, indent=2))
+          PY
+
+      - name: Render live dashboard SVG
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from html import escape
+          d = json.loads(Path('generated/live-status.json').read_text())
+          status = d['overall']
+          status_color = {'HEALTHY':'#79f2a8','ATTENTION':'#fbbf24','WAITING':'#93c5fd'}.get(status,'#93c5fd')
+          rows=[]
+          for i, item in enumerate(d['checks']):
+              y=185+i*52
+              dot='#79f2a8' if item['status']=='PASSING' else ('#f87171' if item['status'] in {'FAILED','CANCELLED','TIMED_OUT'} else '#fbbf24')
+              rows.append(f'<circle cx="70" cy="{y-6}" r="6" fill="{dot}"/><text x="90" y="{y}" fill="#e8f1ff" font-family="Arial" font-size="15">{escape(item["label"])}</text><text x="510" y="{y}" fill="{dot}" font-family="Arial" font-size="14" font-weight="700">{escape(item["status"])}</text><text x="650" y="{y}" fill="#91a4bf" font-family="Arial" font-size="11">{escape(item.get("updated_at") or "—")}</text>')
+          svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650"><rect width="1000" height="650" rx="24" fill="#07101d"/><rect x="1" y="1" width="998" height="648" rx="23" fill="none" stroke="#294666"/><text x="48" y="52" fill="#67e8f9" font-family="Arial" font-size="12" letter-spacing="3">LIVE ENGINEERING DASHBOARD</text><text x="48" y="88" fill="#f3f7ff" font-family="Arial" font-size="28" font-weight="700">GitHub Automation Health</text><text x="48" y="116" fill="#91a4bf" font-family="Arial" font-size="12">Live status from the latest GitHub Actions workflow runs</text><rect x="760" y="45" width="175" height="58" rx="14" fill="#0b1728" stroke="#294666"/><circle cx="785" cy="73" r="6" fill="{status_color}"/><text x="800" y="79" fill="{status_color}" font-family="Arial" font-size="15" font-weight="700">{escape(status)}</text><rect x="48" y="140" width="887" height="405" rx="18" fill="#0b1728" stroke="#243e5c"/>{''.join(rows)}<line x1="70" y1="555" x2="915" y2="555" stroke="#243e5c"/><text x="70" y="585" fill="#79f2a8" font-family="Arial" font-size="12">PASSING: {d['passing']}</text><text x="250" y="585" fill="#fbbf24" font-family="Arial" font-size="12">ATTENTION: {d['attention']}</text><text x="430" y="585" fill="#91a4bf" font-family="Arial" font-size="12">CHECKS: {d['total']}</text><text x="70" y="615" fill="#64748b" font-family="Arial" font-size="10">Updated: {escape(d['generated_at'])} · GitHub Actions telemetry only</text></svg>'''
+          Path('generated/live-engineering-dashboard.svg').write_text(svg)
+          PY
+
+      - name: Commit dashboard data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add generated/live-status.json generated/live-engineering-dashboard.svg generated/workflows.json
+          git diff --cached --quiet || git commit -m 'chore: refresh live engineering dashboard'
+          git push
