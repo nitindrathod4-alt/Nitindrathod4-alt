@@ -20,7 +20,14 @@
 > **Automate what can be automated. Version what can be versioned. Monitor what can fail. Improve everything.**
 
 ## 🧰 Tech Stack
-<div align="center"><img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,jenkins,linux,git,github,bash,java,spring,nodejs,react,mongodb,maven" /></div>
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,jenkins,linux,git,github,bash,java,spring,nodejs,react,mongodb,maven&perline=8" alt="DevOps technology stack" />
+</div>
+
+<div align="center">
+  <sub>☁️ Cloud • ⚙️ CI/CD • 🐳 Containers • ☸️ Orchestration • 🏗️ IaC • 🛡️ Security • 📊 Observability • 🤖 Automation</sub>
+</div>
 
 ---
 
