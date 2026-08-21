@@ -28,166 +28,205 @@
 ## 🏗️ 3-Tier Application Architecture
 <div align="center"><img src="./assets/three-tier-architecture.svg" width="100%" alt="Three tier application architecture" /></div>
 
-### 🔍 How It Works — Request to Response
+### 🔍 Request → Response | Inside the Application
 
-**1️⃣ User Request** → A user opens the application and sends an HTTPS request.
-
-**2️⃣ Entry Layer** → DNS/load balancer or ingress receives the request and routes it to the presentation tier. The public edge is the only layer exposed to users.
-
-**3️⃣ Presentation Tier** → The frontend serves the UI. Static assets are delivered to the browser while API requests are forwarded to the backend service.
-
-**4️⃣ Application Tier** → The backend API runs inside containers managed by Kubernetes. It authenticates requests, executes business logic and communicates with internal services.
-
-**5️⃣ Data Tier** → The backend reaches the database through private connectivity. The database is not directly exposed to the internet.
-
-**6️⃣ Response** → Database result → Backend API → Frontend → User.
+| # | Stage | What happens |
+|---|---|---|
+| **01** | 👤 **Request** | User sends an HTTPS request to the application. |
+| **02** | 🌐 **Edge** | DNS / ALB / Ingress receives traffic and routes it securely. |
+| **03** | 🖥️ **Presentation** | Frontend serves the UI and sends API calls to the backend. |
+| **04** | ⚙️ **Application** | Kubernetes-managed backend authenticates requests and runs business logic. |
+| **05** | 🗄️ **Data** | Backend accesses the private database and persistent storage. |
+| **06** | 🔄 **Response** | Database → API → Frontend → User. |
 
 ```text
-USER
-  │
-  │ HTTPS
-  ▼
-┌──────────────────────┐
-│ DNS / ALB / INGRESS  │  ← Public Edge
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ PRESENTATION TIER    │  ← Frontend
-│ HTML / JS / UI       │
-└──────────┬───────────┘
-           │ API Request
-           ▼
-┌──────────────────────┐
-│ APPLICATION TIER     │  ← Backend
-│ Docker + Kubernetes  │
-│ Auth + Business Logic│
-└──────────┬───────────┘
-           │ Private DB Query
-           ▼
-┌──────────────────────┐
-│ DATA TIER            │  ← Database
-│ Persistent Storage   │
-└──────────┬───────────┘
-           │
-           ▼
-       DB Response
-           │
-           ▼
-      USER RESPONSE
+👤 USER
+   │ HTTPS
+   ▼
+┌────────────────────────────┐
+│ 🌐 DNS / ALB / INGRESS     │  PUBLIC EDGE
+└─────────────┬──────────────┘
+              ▼
+┌────────────────────────────┐
+│ 🖥️ TIER 1 · PRESENTATION  │  FRONTEND
+│ UI / HTML / JS             │
+└─────────────┬──────────────┘
+              │ API REQUEST
+              ▼
+┌────────────────────────────┐
+│ ⚙️ TIER 2 · APPLICATION    │  BACKEND
+│ Docker + Kubernetes        │
+│ Auth + Business Logic      │
+└─────────────┬──────────────┘
+              │ PRIVATE DB QUERY
+              ▼
+┌────────────────────────────┐
+│ 🗄️ TIER 3 · DATA           │  DATABASE
+│ Persistent Storage         │
+└─────────────┬──────────────┘
+              │ DB RESPONSE
+              ▼
+         👤 USER RESPONSE
 ```
+
+### 🧭 Layer-by-Layer Engineering
+
+**🌐 Edge → Presentation** — HTTPS traffic enters through the public edge. Only the required application entry point is exposed; the database stays private.
+
+**🖥️ Presentation → Application** — The frontend renders the UI and calls the backend API. Both layers can be versioned and released independently.
+
+**⚙️ Application → Data** — Backend containers run under Kubernetes. The API handles authentication and business logic, then communicates with the database over private connectivity.
+
+**🗄️ Data → Response** — The database returns data, the API builds the response, and the frontend renders the result back to the user.
+
+---
 
 ### 🔐 Why This Architecture?
 
-| Concern | Design |
-|---|---|
-| Security | Public edge separated from private application/data layers |
-| Scalability | Frontend and backend can scale independently |
-| Availability | Multiple application replicas can run behind a load balancer |
-| Maintainability | UI, API and data responsibilities remain separated |
-| Deployment | Each tier can be versioned and released independently |
-| Recovery | Persistent data can use backups and recovery strategies |
+| Concern | Architecture decision | Result |
+|---|---|---|
+| 🔐 Security | Public edge → private app → private data | Smaller attack surface |
+| 📈 Scalability | Independent tier scaling | Handles changing workloads |
+| 🟢 Availability | Multiple application replicas | Better fault tolerance |
+| 🧩 Maintainability | Separate UI / API / data responsibilities | Easier troubleshooting |
+| 🚀 Deployment | Version tiers independently | Safer releases and rollback |
+| 💾 Recovery | Persistent storage + backups | Better resilience |
+| 📊 Observability | Health checks + logs + metrics | Faster diagnosis |
 
-### 📈 What Happens When Traffic Increases?
-
-```text
-NORMAL TRAFFIC
-Frontend ×2  →  Backend ×2  →  Database
-
-             TRAFFIC SPIKE
-                  │
-                  ▼
-        Load Balancer distributes
-                  │
-        ┌─────────┼─────────┐
-        ▼         ▼         ▼
-     Backend   Backend   Backend
-       Pod       Pod       Pod
-        │         │         │
-        └─────────┼─────────┘
-                  ▼
-               Database
-```
-
-With Kubernetes, the application tier can increase replicas based on workload. The database remains protected behind private access and should be scaled using an appropriate managed-database strategy rather than simply adding application pods.
-
-### 🩺 Failure Scenario
+### 📈 Traffic Spike — What Changes?
 
 ```text
-Frontend healthy
-      │
-      ▼
-Backend Pod #1 ❌
-Backend Pod #2 ✅  ─────→ Request continues
-Backend Pod #3 ✅
-      │
-      ▼
-Database ✅
+NORMAL
+Frontend ×2 → Backend ×2 → Database
+
+                       TRAFFIC SPIKE
+                            │
+                            ▼
+                    ┌───────────────┐
+                    │ LOAD BALANCER │
+                    └───────┬───────┘
+                            │
+              ┌─────────────┼─────────────┐
+              ▼             ▼             ▼
+         ┌─────────┐   ┌─────────┐   ┌─────────┐
+         │ API #1  │   │ API #2  │   │ API #3  │
+         │  POD    │   │  POD    │   │  POD    │
+         └────┬────┘   └────┬────┘   └────┬────┘
+              └─────────────┼─────────────┘
+                            ▼
+                       ┌──────────┐
+                       │ DATABASE │
+                       └──────────┘
 ```
 
-If one backend pod fails, Kubernetes can remove the unhealthy pod from service and maintain traffic through healthy replicas. Health checks, logs and metrics then help identify the root cause.
+When an HPA-based Kubernetes setup is configured, the application tier can add replicas as workload increases. The database does **not** automatically scale just because more API pods exist; the data tier needs its own capacity, caching, read-replica or managed-database strategy.
+
+### 🩺 Failure Scenario — One Backend Pod Dies
+
+```text
+                  SERVICE / LOAD BALANCER
+                           │
+              ┌────────────┼────────────┐
+              ▼            ▼            ▼
+           API #1        API #2        API #3
+             ❌            ✅             ✅
+                           │             │
+                           └──────┬──────┘
+                                  ▼
+                             🗄️ DATABASE
+                                  ✅
+
+              RESULT → healthy replicas serve traffic
+```
+
+Health probes can mark the failed pod unavailable. Kubernetes can restart or replace it according to the workload configuration, while logs and metrics help engineers identify the root cause.
+
+---
 
 ### 🔄 Complete Engineering Lifecycle
 
 ```text
-CODE
- ↓
-GITHUB
- ↓
-CI VALIDATION
- ├─ ShellCheck
- ├─ Docker validation
- ├─ Terraform validation
- └─ Kubernetes validation
- ↓
-BUILD IMAGE
- ↓
-IMAGE REGISTRY
- ↓
-DEPLOY TO KUBERNETES
- ↓
-HEALTH CHECKS
- ↓
-LOGS + METRICS
- ↓
-ALERT
- ↓
-INVESTIGATE → FIX → TEST → DEPLOY AGAIN
+💻 CODE
+   │
+   ▼
+🐙 GITHUB
+   │
+   ▼
+⚙️ CI VALIDATION
+   ├── ShellCheck
+   ├── Docker validation
+   ├── Terraform validation
+   └── Kubernetes validation
+   │
+   ▼
+🐳 BUILD IMAGE
+   │
+   ▼
+📦 IMAGE REGISTRY
+   │
+   ▼
+☸️ KUBERNETES
+   ├── Deploy
+   ├── Service
+   └── Scale
+   │
+   ▼
+🩺 HEALTH CHECKS
+   │
+   ▼
+📊 LOGS + METRICS
+   │
+   ▼
+🚨 ALERT / INCIDENT
+   │
+   ▼
+🔎 INVESTIGATE → 🔧 FIX → 🧪 TEST
+   │
+   └──────────────────→ 🚀 DEPLOY
 ```
 
-> **Important:** This section documents the target architecture and engineering workflow. It does not claim that a live AWS/EKS production environment is currently connected.
-
-### 🔐 Security Flow
+### 🛡️ Security Boundary
 
 ```text
-PUBLIC INTERNET
-      │
-      ▼
-  ALB / INGRESS
-      │
-      ▼
-┌──────────────┐
-│ PUBLIC TIER  │  ← Frontend
-└──────┬───────┘
-       │ private network
-       ▼
-┌──────────────┐
-│ PRIVATE TIER │  ← API / Backend
-└──────┬───────┘
-       │ private DB access
-       ▼
-┌──────────────┐
-│ DATA TIER    │  ← Database
-└──────────────┘
+                 🌍 PUBLIC INTERNET
+                         │
+                         ▼
+                  ┌─────────────┐
+                  │ ALB / INGRESS│
+                  └──────┬──────┘
+                         │
+                    PUBLIC EDGE
+                         ▼
+                  ┌─────────────┐
+                  │  FRONTEND   │
+                  └──────┬──────┘
+                         │ PRIVATE
+                         ▼
+                  ┌─────────────┐
+                  │  BACKEND    │
+                  └──────┬──────┘
+                         │ PRIVATE DB ACCESS
+                         ▼
+                  ┌─────────────┐
+                  │  DATABASE   │
+                  └─────────────┘
+
+              🚫 DATABASE IS NOT PUBLIC
 ```
 
-### 📈 Scaling Strategy
+### 📊 Scaling & Reliability Matrix
 
-| Layer | Scaling Strategy | Main Goal |
-|---|---|---|
-| Presentation | Load balancing + replicas | Handle user traffic |
-| Application | Kubernetes HPA + replicas | Handle API workload |
-| Data | Managed DB / read replicas / backups | Reliability & persistence |
+| Tier | Scaling | Reliability | Primary goal |
+|---|---|---|---|
+| 🌐 Presentation | Load balancer + replicas / CDN | Multiple instances | Handle user traffic |
+| ⚙️ Application | Kubernetes replicas + HPA | Probes + rolling updates | Handle API workload |
+| 🗄️ Data | Managed DB + replicas / cache | Backups + recovery | Protect persistence |
+
+### 🎯 Engineering Outcome
+
+**Separate responsibilities → isolate security boundaries → scale the workload tier → protect persistent data → observe the system → recover quickly.**
+
+> **Architecture note:** This is a deployment-ready target design. It does not claim that a live AWS/EKS production environment is currently connected.
 
 ---
 
